@@ -1,0 +1,31 @@
+// Colors
+$background-color: #fafafa;
+$border-radius-m: 8px;
+$primary-color: #ff6b00;
+$primary-color-hover: #ff8533;
+
+// ВАЖНО: page-container - это базовый миксин, который должен использоваться на ВСЕХ страницах приложения.
+// Он обеспечивает:
+// 1. Правильные отступы для контента (margin: 64px 0)
+// 2. Консистентную ширину контейнера (padding: 46px 96px 0 96px)
+// 3. Адаптивность на разных устройствах (медиа-запрос для мобильных)
+//
+// При создании новой страницы:
+// 1. Создайте .module.scss файл
+// 2. Импортируйте vars.scss через @use '@/styles/vars.scss' as *
+// 3. Используйте @include page-container в корневом классе страницы
+// Пример:
+// .newPage {
+//   @include page-container;
+//   // остальные стили...
+// }
+@mixin page-container {
+	margin: 64px 0;
+	padding: 46px 96px 0 96px;
+	position: relative;
+
+	@media screen and (max-width: 650px) {
+		margin: 64px 0;
+		padding: 22px 1rem 0;
+	}
+}
