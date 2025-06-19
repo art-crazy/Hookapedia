@@ -1,6 +1,5 @@
 @use './reset';
 @use './vars' as *;
-@use '@/styles/fonts' as *; /* Импортируем шрифты */
 
 :root {
 	--base-line-height: 1.5;
