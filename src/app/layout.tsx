@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
-import {LayoutWrapper} from "ui-hookapedia";
+import {LayoutWrapperUI} from "ui-hookapedia";
 import Header from "../app/Header/Header";
 
 const geistSans = Geist({
@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <LayoutWrapper HeaderChild={Header}>{children}</LayoutWrapper>
+      <LayoutWrapperUI HeaderChild={Header}>{children}</LayoutWrapperUI>
       </body>
     </html>
   );
