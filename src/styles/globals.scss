@@ -19,6 +19,9 @@ body {
 	font-weight: 400;
 	color: #222;
 	background-color: $background-color;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 }
 
 /* Scrollbar Styles */
