@@ -3,6 +3,7 @@ import {Geist, Geist_Mono} from "next/font/google";
 import "@/styles/globals.scss";
 import {LayoutWrapperUI} from "ui-hookapedia";
 import Header from "../app/Header/Header";
+import React from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
