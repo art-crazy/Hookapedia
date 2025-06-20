@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "@/styles/globals.scss";
 import {LayoutWrapperUI} from "ui-hookapedia";
-import Header from "../app/Header/Header";
+import Header from "@/components/Header/Header";
 import React from "react";
 
 const geistSans = Geist({
