@@ -2,6 +2,7 @@
 
 import Script from 'next/script';
 import React from 'react';
+import { YM_ID } from '../../config/ym.constants';
 
 export default function YandexMetrika() {
   return (
@@ -15,7 +16,7 @@ export default function YandexMetrika() {
           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}
           )(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-          ym(103415240, "init", {
+          ym(${YM_ID}, "init", {
             clickmap:true,
             trackLinks:true,
             accurateTrackBounce:true,
