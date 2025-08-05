@@ -1,7 +1,7 @@
 "use client"
 import {Mix} from "ui-hookapedia";
 
-const testDate = {
+const testData = {
   title: "Hookah Mix",
   id: "hookah-mix",
   reviews: "Hookah Mix",
@@ -11,6 +11,6 @@ const testDate = {
 
 export default function Page () {
   return (
-      <Mix recipe={testDate}/>
+      <Mix recipe={testData}/>
   )
 }
