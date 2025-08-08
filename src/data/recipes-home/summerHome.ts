@@ -30,7 +30,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Добавьте лёд в колбу и залейте холодной водой.' },
             { title: 'Шаг 5.', text: 'Начинайте курение на средней температуре, постепенно увеличивая жар.' }
         ],
-        imageMain: '/recepies/lemon-mint-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['освежающие', 'лимон', 'мята', 'летние миксы', 'простые рецепты'],
         rating: 4.7,
         reviews: 128,
@@ -67,7 +67,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Наполните колбу холодной водой и добавьте много льда.' },
             { title: 'Шаг 5.', text: 'Разжигайте угли и начинайте курение на слабом жаре.' }
         ],
-        imageMain: '/recepies/watermelon-ice-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['освежающие', 'арбуз', 'лёд', 'летние миксы', 'фруктовые'],
         rating: 4.6,
         reviews: 95,
@@ -104,7 +104,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Добавьте лёд в колбу и залейте холодной водой.' },
             { title: 'Шаг 5.', text: 'Начинайте курение на средней температуре, контролируя жар.' }
         ],
-        imageMain: '/recepies/grape-mint-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['освежающие', 'виноград', 'мята', 'летние миксы', 'фруктовые'],
         rating: 4.8,
         reviews: 112,
@@ -141,7 +141,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Заполните колбу холодной водой со льдом.' },
             { title: 'Шаг 5.', text: 'Начинайте курение на низкой температуре.' }
         ],
-        imageMain: '/recepies/orange-ice-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['освежающие', 'апельсин', 'лёд', 'летние миксы', 'цитрусовые'],
         rating: 4.9,
         reviews: 156,
@@ -178,7 +178,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Добавьте лёд в колбу и залейте холодной водой.' },
             { title: 'Шаг 5.', text: 'Начинайте курение на средней температуре.' }
         ],
-        imageMain: '/recepies/kiwi-mint-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['экзотические', 'киви', 'мята', 'летние миксы', 'фруктовые'],
         rating: 4.7,
         reviews: 89,
@@ -215,7 +215,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Наполните колбу льдом и холодной водой.' },
             { title: 'Шаг 5.', text: 'Начинайте курение на маленьком жаре.' }
         ],
-        imageMain: '/recepies/passion-fruit-ice-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['освежающие', 'маракуйя', 'лёд', 'летние миксы', 'тропические'],
         rating: 4.6,
         reviews: 76,
@@ -252,7 +252,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Наполните колбу холодной водой с льдом.' },
             { title: 'Шаг 5.', text: 'Разогрейте угли и начинайте курение на среднем жаре.' }
         ],
-        imageMain: '/recepies/double-apple-mint-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['классика', 'яблоко', 'мята', 'проверенные миксы'],
         rating: 4.8,
         reviews: 142,
@@ -289,7 +289,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Заполните колбу холодной водой и добавьте лёд.' },
             { title: 'Шаг 5.', text: 'Начинайте курение на умеренном жаре, постепенно увеличивая температуру.' }
         ],
-        imageMain: '/recepies/cherry-cola-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['классика', 'вишня', 'кола', 'популярные', 'сладкие'],
         rating: 4.7,
         reviews: 98,
@@ -326,7 +326,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Наполните колбу холодной водой с льдом.' },
             { title: 'Шаг 5.', text: 'Начинайте курение на малом жаре.' }
         ],
-        imageMain: '/recepies/strawberry-banana-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['классика', 'клубника', 'банан', 'фруктовые', 'популярные'],
         rating: 4.6,
         reviews: 87,
@@ -363,7 +363,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Заполните колбу холодной водой с льдом.' },
             { title: 'Шаг 5.', text: 'Начинайте курение на среднем жаре.' }
         ],
-        imageMain: '/recepies/mango-peach-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['классика', 'манго', 'персик', 'тропические', 'летние'],
         rating: 4.8,
         reviews: 112,
@@ -400,7 +400,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Наполните колбу холодной водой с льдом.' },
             { title: 'Шаг 5.', text: 'Начинайте курение на среднем жаре.' }
         ],
-        imageMain: '/recepies/grape-mint-classic-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['классика', 'виноград', 'мята', 'гармоничные', 'популярные'],
         rating: 4.7,
         reviews: 94,
@@ -437,7 +437,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Наполните колбу холодной водой со льдом.' },
             { title: 'Шаг 5.', text: 'Начинайте курение на умеренном жаре.' }
         ],
-        imageMain: '/recepies/pineapple-coconut-hookah.webp',
+        imageMain: '/mock.webp',
         categories: ['классика', 'ананас', 'кокос', 'экзотика', 'тропики'],
         rating: 4.8,
         reviews: 88,
@@ -477,7 +477,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Полейте оливковым маслом и бальзамическим уксусом.' },
             { title: 'Шаг 5.', text: 'Посолите и поперчите по вкусу.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['салаты', 'капрезе', 'летние блюда', 'итальянская кухня', 'вегетарианское'],
         rating: 4.8,
         reviews: 189,
@@ -522,7 +522,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Смешайте все ингредиенты в большой миске.' },
             { title: 'Шаг 5.', text: 'Полейте соусом и посыпьте тертым пармезаном.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['салаты', 'цезарь', 'курица', 'летние блюда', 'американская кухня'],
         rating: 4.7,
         reviews: 312,
@@ -561,7 +561,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Варите на водяной бане до загустения.' },
             { title: 'Шаг 5.', text: 'Охладите и заморозьте в мороженице.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['десерты', 'мороженое', 'летние блюда', 'итальянская кухня', 'вегетарианское'],
         rating: 4.9,
         reviews: 178,
@@ -598,7 +598,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Охладите смесь.' },
             { title: 'Шаг 5.', text: 'Заморозьте в мороженице или морозилке, периодически перемешивая.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['десерты', 'сорбет', 'летние блюда', 'французская кухня', 'веганское'],
         rating: 4.8,
         reviews: 145,
@@ -639,7 +639,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Выпекайте 1 час при 160°C.' },
             { title: 'Шаг 5.', text: 'Приготовьте ягодный соус и полейте остывший чизкейк.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['десерты', 'чизкейк', 'ягоды', 'летние блюда', 'американская кухня'],
         rating: 4.9,
         reviews: 234,
@@ -679,7 +679,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Взбейте сливки с сахарной пудрой.' },
             { title: 'Шаг 5.', text: 'Выложите сливки на остывшее безе и украсьте ягодами.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['десерты', 'павлова', 'ягоды', 'летние блюда', 'австралийская кухня'],
         rating: 4.8,
         reviews: 167,
@@ -718,7 +718,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Смажьте горячую кукурузу ароматным маслом.' },
             { title: 'Шаг 5.', text: 'Посолите и поперчите по вкусу.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['гарниры', 'кукуруза', 'гриль', 'летние блюда', 'американская кухня'],
         rating: 4.7,
         reviews: 156,
@@ -760,7 +760,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Обжарьте оладьи на разогретом масле до золотистой корочки.' },
             { title: 'Шаг 5.', text: 'Подавайте горячими со сметаной или йогуртом.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['закуски', 'кабачки', 'оладьи', 'летние блюда', 'средиземноморская кухня'],
         rating: 4.6,
         reviews: 189,
@@ -799,7 +799,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Добавьте листья мяты и дайте настояться 10 минут.' },
             { title: 'Шаг 5.', text: 'Подавайте со льдом и украсьте листиками мяты.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['напитки', 'лимонад', 'летние блюда', 'безалкогольные напитки'],
         rating: 4.8,
         reviews: 245,
@@ -836,7 +836,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Добавьте лед и еще раз взбейте.' },
             { title: 'Шаг 5.', text: 'Подавайте сразу после приготовления.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['напитки', 'смузи', 'ягоды', 'летние блюда', 'здоровое питание'],
         rating: 4.7,
         reviews: 198,
@@ -877,7 +877,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Взбейте до получения однородной пасты.' },
             { title: 'Шаг 5.', text: 'Подавайте с паприкой и оливковым маслом.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['закуски', 'хумус', 'средиземноморская кухня', 'вегетарианские блюда'],
         rating: 4.8,
         reviews: 312,
@@ -917,7 +917,7 @@ export const summerHome: Record<number, Recipe> = {
             { title: 'Шаг 4.', text: 'Посолите и добавьте перец чили по вкусу.' },
             { title: 'Шаг 5.', text: 'Подавайте с чипсами или овощами.' }
         ],
-        imageMain: '',
+        imageMain: '/mock.webp',
         categories: ['закуски', 'гуакамоле', 'мексиканская кухня', 'вегетарианские блюда'],
         rating: 4.7,
         reviews: 278,
