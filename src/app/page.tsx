@@ -25,16 +25,16 @@ interface Collection {
 }
 
 export default function Home() {
-	// Создаем подборки рецептов
+	// Создаем подборки рецептов кальянов
 	const collections: Collection[] = [
 		{
-			title: 'Летние супы без заморочек: 6 рецептов на каждый день',
+			title: 'Освежающие миксы для лета: 6 ярких вкусов на каждый день',
 			link: '/recepty',
 			type: COLLECTION_TYPES.DEFAULT,
 			recipes: [364, 365, 366, 367, 368, 369].map(id => recipes[id])
 		},
 		{
-			title: '6 быстрых блюд на даче: готовим на мангале и плите',
+			title: 'Топ-6 классических миксов: проверенные сочетания табаков',
 			link: '/recepty',
 			type: COLLECTION_TYPES.DEFAULT,
 			recipes: [370, 371, 372, 373, 374, 409].map(id => recipes[id])
@@ -46,67 +46,67 @@ export default function Home() {
 			recipes: [
 				{
 					id: 12345678,
-					name: 'chinese-cuisine',
-					title: 'Китайская кухня',
-					description: 'Традиционные рецепты китайской кухни',
-					link: '/recepty/chinese',
-					imageMain: '/recepies/kitayskaya.webp'
+					name: 'fruity-mixes',
+					title: 'Фруктовые миксы',
+					description: 'Сочные и яркие сочетания фруктовых табаков',
+					link: '/recepty/fruity',
+					imageMain: '/recepies/fruity-hookah.webp'
 				},
 				{
 					id: 23456789,
-					name: 'soups',
-					title: 'Супы',
-					description: 'Разнообразные рецепты супов',
-					link: '/recepty/soups',
-					imageMain: '/recepies/sup2.jpg'
+					name: 'classic-mixes',
+					title: 'Классические миксы',
+					description: 'Проверенные временем рецепты кальянов',
+					link: '/recepty/classic',
+					imageMain: '/recepies/classic-hookah.jpg'
 				},
 				{
 					id: 34567890,
-					name: 'vegetarian',
-					title: 'Вегетарианские блюда',
-					description: 'Блюда без мяса',
-					link: '/recepty/vegetarian',
-					imageMain: '/recepies/vegan.jpg'
+					name: 'dessert-mixes',
+					title: 'Десертные миксы',
+					description: 'Сладкие и насыщенные вкусы для гурманов',
+					link: '/recepty/dessert',
+					imageMain: '/recepies/dessert-hookah.jpg'
 				},
 				{
 					id: 45678901,
-					name: 'fast-cooking',
-					title: 'Быстрые рецепты',
-					description: 'Блюда, которые можно приготовить быстро',
-					link: '/recepty/fast-slow-cooking',
-					imageMain: '/recepies/bistro.png'
+					name: 'quick-mixes',
+					title: 'Простые миксы',
+					description: 'Быстрые рецепты из 2-3 компонентов',
+					link: '/recepty/quick-mixes',
+					imageMain: '/recepies/simple-hookah.png'
 				},
 				{
 					id: 56789012,
-					name: 'baking-desserts',
-					title: 'Выпечка и десерты',
-					description: 'Сладкие блюда и выпечка',
-					link: '/recepty/baking-desserts',
-					imageMain: '/recepies/vipechka.jpg'
+					name: 'refreshing-mixes',
+					title: 'Освежающие миксы',
+					description: 'Холодящие и свежие сочетания с мятой',
+					link: '/recepty/refreshing',
+					imageMain: '/recepies/fresh-hookah.jpg'
 				},
 				{
 					id: 67890123,
-					name: 'low-calorie',
-					title: 'Низкокалорийные блюда',
-					description: 'Блюда для поддержания формы',
-					link: '/recepty/low-calorie',
-					imageMain: '/recepies/lowkkal.jpg'
+					name: 'light-mixes',
+					title: 'Лёгкие миксы',
+					description: 'Нежные и воздушные вкусы для начинающих',
+					link: '/recepty/light',
+					imageMain: '/recepies/light-hookah.jpg'
 				},
 				{
 					id: 78901234,
-					name: 'kids-menu',
-					title: 'Детское меню',
-					description: 'Блюда для детей',
-					link: '/recepty/kids-menu',
-					imageMain: '/recepies/children.jpg'
+					name: 'exotic-mixes',
+					title: 'Экзотические миксы',
+					description: 'Необычные и редкие сочетания табаков',
+					link: '/recepty/exotic',
+					imageMain: '/recepies/exotic-hookah.jpg'
 				},
 				{
 					id: 89012345,
-					name: 'main-dishes',
-					title: 'Основные блюда',
-					description: 'Основные блюда для любого случая',
-					link: '/recepty/main-dishes',
-					imageMain: '/recepies/maineat.jpg'
+					name: 'strong-mixes',
+					title: 'Крепкие миксы',
+					description: 'Насыщенные и терпкие вкусы для опытных',
+					link: '/recepty/strong',
+					imageMain: '/recepies/strong-hookah.jpg'
 				}
 			]
 		}
