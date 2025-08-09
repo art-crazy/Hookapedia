@@ -1,0 +1,1 @@
+export { ReceptyPage } from './ReceptyPage'

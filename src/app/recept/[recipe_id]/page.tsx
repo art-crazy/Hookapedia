@@ -1,7 +1,7 @@
 import {notFound} from "next/navigation";
 import {Recipe} from "@/types/recipe";
 import {getRecipeById} from "@/services/api";
-import {ReceptPage} from "@/page/ReceptPage";
+import {ReceptPage} from "@/page/ReceptPage/ReceptPage";
 
 interface PageProps {
   params: Promise<{
