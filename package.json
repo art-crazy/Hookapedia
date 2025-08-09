@@ -13,7 +13,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.89.2",
-    "ui-hookapedia": "^1.0.69"
+    "ui-hookapedia": "^1.0.70"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

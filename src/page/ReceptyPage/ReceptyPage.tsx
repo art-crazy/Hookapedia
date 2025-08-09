@@ -11,6 +11,7 @@ import {
 } from "ui-hookapedia";
 import Image from "next/image";
 import Link from "next/link";
+import {Recipe} from "@/types/recipe";
 
 const dietFilters = {
     title: "Диета",
@@ -27,76 +28,9 @@ const dietFilters = {
     placeholder: "Выберите диету"
 };
 
-
-const mockRecipes: any[] = [
-    {
-        id: '1',
-        title: 'Вегетарианская паста с песто',
-        slug: 'vegetarian-pasta-pesto',
-        image: '/images/pasta.jpg',
-        cookingTime: 20,
-        difficulty: 'легко',
-        rating: 4.5,
-        diet: 'vegetarian',
-        cuisine: 'italian',
-        category: 'dinner',
-        subcategory: 'pasta',
-        author: {
-            name: 'Мария Иванова',
-            avatar: '/avatars/avatar1.jpg'
-        }
-    },
-    {
-        id: '2',
-        title: 'Веганский бургер',
-        slug: 'vegan-burger',
-        image: '/images/burger.jpg',
-        cookingTime: 30,
-        difficulty: 'средне',
-        rating: 4.2,
-        diet: 'vegan',
-        cuisine: 'american',
-        category: 'dinner',
-        subcategory: 'burgers',
-        author: {
-            name: 'Алексей Петров',
-            avatar: '/avatars/avatar2.jpg'
-        }
-    },
-    {
-        id: '3',
-        title: 'Греческий салат',
-        slug: 'greek-salad',
-        image: '/images/salad.jpg',
-        cookingTime: 15,
-        difficulty: 'легко',
-        rating: 4.8,
-        diet: 'vegetarian',
-        cuisine: 'mediterranean',
-        category: 'lunch',
-        subcategory: 'salads',
-        author: {
-            name: 'Елена Смирнова',
-            avatar: '/avatars/avatar3.jpg'
-        }
-    }
-];
-
-const mockFilters = {
-    diet: 'vegetarian',
-    cuisine: '',
-    category: 'dinner',
-    subcategory: '',
-    search: ''
-};
-
-const fallbackTriggered = true;
-
-const recipes = [];
-
-const totalPages = 2;
-
-export const ReceptyPage = () => {
+export const ReceptyPage = ({totalPages, fallbackTriggered, recipes}: {
+    recipes: Recipe[], fallbackTriggered: boolean; totalPages: number
+}) => {
     return (
         <Container>
             <Breadcrumbs
@@ -117,8 +51,7 @@ export const ReceptyPage = () => {
                     <RecipeListSection>
                         <RecipeListAll>
                             <RecipeList
-                                recipes={mockRecipes}
-                                filters={mockFilters}
+                                recipes={recipes}
                                 Image={Image}
                                 Link={Link}
                             />
@@ -127,8 +60,7 @@ export const ReceptyPage = () => {
                     : !recipes?.length ? <RecipeListSection/> :
                         <section aria-label="Список рецептов">
                             <RecipeList
-                                recipes={mockRecipes}
-                                filters={mockFilters}
+                                recipes={recipes}
                                 Image={Image}
                                 Link={Link}
                             />
