@@ -50,7 +50,7 @@ export default function Home() {
 					title: 'Фруктовые миксы',
 					description: 'Сочные и яркие сочетания фруктовых табаков',
 					link: '/recepty/fruity',
-					imageMain: '/recepies/fruity-hookah.webp'
+					imageMain: '/mock.webp',
 				},
 				{
 					id: 23456789,
@@ -58,7 +58,7 @@ export default function Home() {
 					title: 'Классические миксы',
 					description: 'Проверенные временем рецепты кальянов',
 					link: '/recepty/classic',
-					imageMain: '/recepies/classic-hookah.jpg'
+					imageMain: '/mock.webp',
 				},
 				{
 					id: 34567890,
@@ -66,7 +66,7 @@ export default function Home() {
 					title: 'Десертные миксы',
 					description: 'Сладкие и насыщенные вкусы для гурманов',
 					link: '/recepty/dessert',
-					imageMain: '/recepies/dessert-hookah.jpg'
+					imageMain: '/mock.webp',
 				},
 				{
 					id: 45678901,
@@ -74,7 +74,7 @@ export default function Home() {
 					title: 'Простые миксы',
 					description: 'Быстрые рецепты из 2-3 компонентов',
 					link: '/recepty/quick-mixes',
-					imageMain: '/recepies/simple-hookah.png'
+					imageMain: '/mock.webp',
 				},
 				{
 					id: 56789012,
@@ -82,7 +82,7 @@ export default function Home() {
 					title: 'Освежающие миксы',
 					description: 'Холодящие и свежие сочетания с мятой',
 					link: '/recepty/refreshing',
-					imageMain: '/recepies/fresh-hookah.jpg'
+					imageMain: '/mock.webp',
 				},
 				{
 					id: 67890123,
@@ -90,7 +90,7 @@ export default function Home() {
 					title: 'Лёгкие миксы',
 					description: 'Нежные и воздушные вкусы для начинающих',
 					link: '/recepty/light',
-					imageMain: '/recepies/light-hookah.jpg'
+					imageMain: '/mock.webp',
 				},
 				{
 					id: 78901234,
@@ -98,7 +98,7 @@ export default function Home() {
 					title: 'Экзотические миксы',
 					description: 'Необычные и редкие сочетания табаков',
 					link: '/recepty/exotic',
-					imageMain: '/recepies/exotic-hookah.jpg'
+					imageMain: '/mock.webp',
 				},
 				{
 					id: 89012345,
@@ -106,7 +106,7 @@ export default function Home() {
 					title: 'Крепкие миксы',
 					description: 'Насыщенные и терпкие вкусы для опытных',
 					link: '/recepty/strong',
-					imageMain: '/recepies/strong-hookah.jpg'
+					imageMain: '/mock.webp',
 				}
 			]
 		}
