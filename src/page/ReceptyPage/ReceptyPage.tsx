@@ -12,21 +12,22 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import {Recipe} from "@/types/recipe";
-import {dietCategories} from "@/data/categories/dietCategories";
-import {cuisineCategories} from "@/data/categories/cuisineCategories";
-import {dishCategories} from "@/data/categories/dishCategories";
+import {strengthCategories} from "@/data/categories/strengthCategories";
+import {flavorCategoryCategories} from "@/data/categories/flavorCategoryCategories";
+import {coolingCategories} from "@/data/categories/coolingCategories";
+import {mintCategories} from "@/data/categories/mintCategories";
 import {useState} from "react";
 
 
-type FilterType = 'diet' | 'cuisine' | 'category' | 'subcategory';
+type FilterType = 'strength' | 'flavorCategory' | 'cooling' | 'mint';
 
 
 export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath}: {
     recipes: Recipe[], fallbackTriggered: boolean; totalPages: number, currentPath: {
-        diet?: string;
-        cuisine?: string;
-        category?: string;
-        subcategory?: string;
+        strength?: string;
+        flavorCategory?: string;
+        cooling?: string;
+        mint?: string;
     }
 }) => {
 
@@ -35,11 +36,6 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
     const handleFilterSelect = (type: FilterType, slug: string) => {
         setSelectedFilters(prev => {
             const newFilters = { ...prev };
-
-            // Очищаем подкатегорию только если меняется категория
-            if (type === 'category') {
-                delete newFilters.subcategory;
-            }
 
             // Добавляем или удаляем фильтр
             if (slug) {
@@ -52,53 +48,43 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
         });
     };
 
-    // Получаем доступные подкатегории на основе выбранной категории
-    const getAvailableSubcategories = () => {
-        if (!selectedFilters.category) return [];
-
-        const category = dishCategories[selectedFilters.category as keyof typeof dishCategories];
-        if (!category) return [];
-
-        return Object.entries(category.subcategories).map(([id, data]) => ({
-            id,
-            name: data.title,
-            slug: id
-        }));
-    };
 
     const filterGroups = [
         {
-            title: 'Диета',
-            type: 'diet' as const,
-            options: Object.entries(dietCategories).map(([id, data]) => ({
+            title: 'Крепость',
+            type: 'strength' as const,
+            options: Object.entries(strengthCategories).map(([id, data]) => ({
                 id,
                 name: data.title,
                 slug: id
             }))
         },
         {
-            title: 'Кухня',
-            type: 'cuisine' as const,
-            options: Object.entries(cuisineCategories).map(([id, data]) => ({
+            title: 'Категории вкуса',
+            type: 'flavorCategory' as const,
+            options: Object.entries(flavorCategoryCategories).map(([id, data]) => ({
                 id,
                 name: data.title,
                 slug: id
             }))
         },
         {
-            title: 'Категория',
-            type: 'category' as const,
-            options: Object.entries(dishCategories).map(([id, data]) => ({
+            title: 'Наличие холодка',
+            type: 'cooling' as const,
+            options: Object.entries(coolingCategories).map(([id, data]) => ({
                 id,
                 name: data.title,
                 slug: id
             }))
         },
         {
-            title: 'Любое блюдо',
-            type: 'subcategory' as const,
-            options: getAvailableSubcategories(),
-            disabled: !selectedFilters.category
+            title: 'Наличие мяты',
+            type: 'mint' as const,
+            options: Object.entries(mintCategories).map(([id, data]) => ({
+                id,
+                name: data.title,
+                slug: id
+            }))
         }
     ];
 
