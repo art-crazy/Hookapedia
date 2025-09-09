@@ -19,15 +19,15 @@ import {mintCategories} from "@/data/categories/mintCategories";
 import {useState} from "react";
 
 
-type FilterType = 'strength' | 'flavorCategory' | 'cooling' | 'mint';
+type FilterType = 'diet' | 'cuisine' | 'category' | 'subcategory';
 
 
 export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath}: {
     recipes: Recipe[], fallbackTriggered: boolean; totalPages: number, currentPath: {
-        strength?: string;
-        flavorCategory?: string;
-        cooling?: string;
-        mint?: string;
+        diet?: string;
+        cuisine?: string;
+        category?: string;
+        subcategory?: string;
     }
 }) => {
 
@@ -52,39 +52,43 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
     const filterGroups = [
         {
             title: 'Крепость',
-            type: 'strength' as const,
+            type: 'diet' as const,
             options: Object.entries(strengthCategories).map(([id, data]) => ({
                 id,
                 name: data.title,
                 slug: id
-            }))
+            })),
+            disabled: false
         },
         {
             title: 'Категории вкуса',
-            type: 'flavorCategory' as const,
+            type: 'cuisine' as const,
             options: Object.entries(flavorCategoryCategories).map(([id, data]) => ({
                 id,
                 name: data.title,
                 slug: id
-            }))
+            })),
+            disabled: false
         },
         {
             title: 'Наличие холодка',
-            type: 'cooling' as const,
+            type: 'category' as const,
             options: Object.entries(coolingCategories).map(([id, data]) => ({
                 id,
                 name: data.title,
                 slug: id
-            }))
+            })),
+            disabled: false
         },
         {
             title: 'Наличие мяты',
-            type: 'mint' as const,
+            type: 'subcategory' as const,
             options: Object.entries(mintCategories).map(([id, data]) => ({
                 id,
                 name: data.title,
                 slug: id
-            }))
+            })),
+            disabled: false
         }
     ];
 
