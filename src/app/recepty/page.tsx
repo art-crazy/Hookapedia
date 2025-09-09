@@ -1,9 +1,9 @@
 import { metadata } from './metadata';
 export { metadata };
 
-import {ReceptyPage} from "@/page/ReceptyPage/ReceptyPage";
 import {LIMIT} from "@/config/limit.constants";
 import {getRecipes} from "@/services/api";
+import {ReceptyPage} from "@/page/ReceptyPage";
 
 type SearchParams = Promise<{
     diet?: string;
@@ -41,6 +41,7 @@ export default async function Home({searchParams,}: { searchParams: SearchParams
             totalPages={totalPages}
             fallbackTriggered={fallbackTriggered}
             recipes={recipes}
+            currentPath={currentPath}
         />
     );
 }
