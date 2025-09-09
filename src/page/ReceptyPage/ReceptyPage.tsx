@@ -17,6 +17,7 @@ import {flavorCategoryCategories} from "@/data/categories/flavorCategoryCategori
 import {coolingCategories} from "@/data/categories/coolingCategories";
 import {mintCategories} from "@/data/categories/mintCategories";
 import {useState} from "react";
+import {useRouter} from "next/navigation";
 
 
 type FilterType = 'diet' | 'cuisine' | 'category' | 'subcategory';
@@ -31,6 +32,7 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
     }
 }) => {
 
+    const router = useRouter();
     const [selectedFilters, setSelectedFilters] = useState(currentPath);
 
     const handleFilterSelect = (type: FilterType, slug: string) => {
@@ -48,6 +50,17 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
         });
     };
 
+    const handleApplyFilters = () => {
+        // Формируем URL
+        const pathParts = [];
+        if (selectedFilters.diet) pathParts.push(selectedFilters.diet);
+        if (selectedFilters.cuisine) pathParts.push(selectedFilters.cuisine);
+        if (selectedFilters.category) pathParts.push(selectedFilters.category);
+        if (selectedFilters.subcategory) pathParts.push(selectedFilters.subcategory);
+
+        const url = pathParts.length > 0 ? `/recepty/${pathParts.join('/')}` : '/recepty';
+        router.push(url);
+    };
 
     const filterGroups = [
         {
@@ -113,7 +126,7 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
                     ))}
                     <ButtonSearch
                         isButtonDisabled={false}
-                        handleApplyFilters={ () => console.log('Button Search Click') }
+                        handleApplyFilters={handleApplyFilters}
                     />
                 </Filters>
 
