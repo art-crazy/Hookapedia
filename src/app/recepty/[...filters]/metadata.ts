@@ -1,9 +1,7 @@
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
-import {dishCategories} from "@/data/categories/dishCategories";
-import {dietCategories} from "@/data/categories/dietCategories";
-import {cuisineCategories} from "@/data/categories/cuisineCategories";
 import { notFound } from 'next/navigation';
+import {cuisineCategories, dietCategories, dishCategories} from "ui-hookapedia/dist/data/categories";
 
 type Props = {
   params: Promise<{ filters: string[] }>
