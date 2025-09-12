@@ -4,19 +4,10 @@ import {getRecipes} from "@/services/api";
 import {coolingCategories} from "@/data/categories/coolingCategories";
 import {strengthCategories} from "@/data/categories/strengthCategories";
 import {flavorCategoryCategories} from "@/data/categories/flavorCategoryCategories";
+import {mintCategories} from "@/data/categories/mintCategories";
 
 const RECIPES_PATH = { title: "Рецепты", url: "/recepty", key: "/recepty" };
 
-type CategoryWithSubcategories = {
-  id: string;
-  title: string;
-  subcategories: {
-    [key: string]: {
-      id: string;
-      title: string;
-    };
-  };
-};
 
 type CategoryMap = {
   [key: string]: {
@@ -28,7 +19,8 @@ type CategoryMap = {
 const categoryMaps: Record<string, CategoryMap> = {
   diet: strengthCategories,
   cuisine: flavorCategoryCategories,
-  dish: coolingCategories
+  category: coolingCategories,
+  subcategory: mintCategories
 };
 
 const getCategoryTitle = (filter: string): string | undefined => {
@@ -39,10 +31,6 @@ const getCategoryTitle = (filter: string): string | undefined => {
   return undefined;
 };
 
-const getSubcategoryTitle = (category: string, subcategory: string): string | undefined => {
-  const categoryData = coolingCategories[category as keyof typeof coolingCategories] as CategoryWithSubcategories;
-  return categoryData?.subcategories?.[subcategory]?.title;
-};
 
 type Props = {
   params: Promise<{
@@ -66,11 +54,7 @@ export default async function FilteredRecipesContent({ params, searchParams }: P
     diet: filters.find(filter => filter in strengthCategories),
     cuisine: filters.find(filter => filter in flavorCategoryCategories),
     category: filters.find(filter => filter in coolingCategories),
-    subcategory: filters.find((filter, index) => {
-      const prevFilter = filters[index - 1];
-      return prevFilter && prevFilter in coolingCategories &&
-          filter in coolingCategories[prevFilter as keyof typeof coolingCategories].subcategories;
-    }),
+    subcategory: filters.find(filter => filter in mintCategories),
     search: resolvedSearchParams.search
   };
 
@@ -93,14 +77,7 @@ export default async function FilteredRecipesContent({ params, searchParams }: P
     RECIPES_PATH,
     ...filters.map((filter, index) => {
       const path = `/recepty/${filters.slice(0, index + 1).join('/')}`;
-      let title: string | undefined;
-
-      if (index === filters.length - 1 && currentPath.category && currentPath.subcategory) {
-        // Если это последний элемент и у нас есть категория и подкатегория
-        title = getSubcategoryTitle(currentPath.category, filter);
-      } else {
-        title = getCategoryTitle(filter);
-      }
+      const title = getCategoryTitle(filter);
 
       return title ? { title, url: path, key: path } : null;
     }).filter((path): path is { title: string; url: string; key: string } => path !== null)
@@ -108,9 +85,7 @@ export default async function FilteredRecipesContent({ params, searchParams }: P
 
   // Определяем заголовок страницы
   const lastFilter = filters[filters.length - 1];
-  const pageTitle = getCategoryTitle(lastFilter) ||
-      (currentPath.category && currentPath.subcategory ? getSubcategoryTitle(currentPath.category, currentPath.subcategory) : undefined) ||
-      "";
+  const pageTitle = getCategoryTitle(lastFilter) || "";
 
   // Убираем последний элемент из хлебных крошек, так как он будет в заголовке
   const finalBreadcrumbPaths = breadcrumbPaths.slice(0, -1);
