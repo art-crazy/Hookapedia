@@ -14,7 +14,7 @@ type SearchParams = Promise<{
     page?: string;
 }>;
 
-export default async function Home({searchParams,}: { searchParams: SearchParams; }) {
+export default async function RecipesContent({searchParams,}: { searchParams: SearchParams; }) {
 
     const resolvedParams = await searchParams;
     const currentPage = Number(resolvedParams.page) || 1;

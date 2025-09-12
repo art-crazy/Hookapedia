@@ -22,14 +22,24 @@ import {useRouter} from "next/navigation";
 
 type FilterType = 'diet' | 'cuisine' | 'category' | 'subcategory';
 
+type BreadcrumbPath = {
+    title: string;
+    url: string;
+    key: string;
+};
 
-export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath}: {
-    recipes: Recipe[], fallbackTriggered: boolean; totalPages: number, currentPath: {
+export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath, pageTitle, finalBreadcrumbPaths}: {
+    recipes: Recipe[], 
+    fallbackTriggered: boolean; 
+    totalPages: number, 
+    currentPath: {
         diet?: string;
         cuisine?: string;
         category?: string;
         subcategory?: string;
-    }
+    },
+    pageTitle?: string;
+    finalBreadcrumbPaths?: BreadcrumbPath[];
 }) => {
 
     const router = useRouter();
@@ -108,8 +118,8 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
     return (
         <Container>
             <Breadcrumbs
-                title="Рецепты"
-                paths={[]}
+                title={pageTitle || "Рецепты"}
+                paths={finalBreadcrumbPaths || []}
             />
 
             <ReceptyContent>
