@@ -2,18 +2,18 @@
 import {BaseCategory} from "@/data/categories/type";
 
 type MintCategories = {
-    'yes': BaseCategory;
-    'no': BaseCategory;
+    'est': BaseCategory;
+    'net': BaseCategory;
 };
 
 // Наличие мяты
 export const mintCategories: MintCategories = {
-    'yes': {
-        id: 'yes',
+    'est': {
+        id: 'est',
         title: 'Есть'
     },
-    'no': {
-        id: 'no',
+    'net': {
+        id: 'net',
         title: 'Нет'
     }
 };

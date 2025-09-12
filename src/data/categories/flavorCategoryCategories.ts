@@ -2,38 +2,38 @@
 import {BaseCategory} from "@/data/categories/type";
 
 type FlavorCategoryCategories = {
-    'fruits': BaseCategory;
-    'berries': BaseCategory;
-    'citrus': BaseCategory;
-    'dessert': BaseCategory;
-    'spicy': BaseCategory;
-    'exotic': BaseCategory;
+    'frukty': BaseCategory;
+    'yagody': BaseCategory;
+    'tsitrusovye': BaseCategory;
+    'deserty': BaseCategory;
+    'pryanosti-travy': BaseCategory;
+    'ekzotika': BaseCategory;
 };
 
 // Категории вкуса
 export const flavorCategoryCategories: FlavorCategoryCategories = {
-    'fruits': {
-        id: 'fruits',
+    'frukty': {
+        id: 'frukty',
         title: 'Фрукты'
     },
-    'berries': {
-        id: 'berries',
+    'yagody': {
+        id: 'yagody',
         title: 'Ягоды'
     },
-    'citrus': {
-        id: 'citrus',
+    'tsitrusovye': {
+        id: 'tsitrusovye',
         title: 'Цитрусовые'
     },
-    'dessert': {
-        id: 'dessert',
+    'deserty': {
+        id: 'deserty',
         title: 'Десерты'
     },
-    'spicy': {
-        id: 'spicy',
+    'pryanosti-travy': {
+        id: 'pryanosti-travy',
         title: 'Пряности/травы'
     },
-    'exotic': {
-        id: 'exotic',
+    'ekzotika': {
+        id: 'ekzotika',
         title: 'Экзотика'
     }
 };

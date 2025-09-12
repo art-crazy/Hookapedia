@@ -2,23 +2,23 @@
 import {BaseCategory} from "@/data/categories/type";
 
 type CoolingCategories = {
-    'none': BaseCategory;
-    'light': BaseCategory;
-    'strong': BaseCategory;
+    'net': BaseCategory;
+    'legkiy-kholod': BaseCategory;
+    'silnyy-kholod': BaseCategory;
 };
 
 // Наличие холодка
 export const coolingCategories: CoolingCategories = {
-    'none': {
-        id: 'none',
+    'net': {
+        id: 'net',
         title: 'Нет'
     },
-    'light': {
-        id: 'light',
+    'legkiy-kholod': {
+        id: 'legkiy-kholod',
         title: 'Лёгкий холод'
     },
-    'strong': {
-        id: 'strong',
+    'silnyy-kholod': {
+        id: 'silnyy-kholod',
         title: 'Сильный холод'
     }
 };

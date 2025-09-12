@@ -35,6 +35,7 @@ export default async function RecipesContent({searchParams,}: { searchParams: Se
 
     const {items: recipes, total, limit, fallbackTriggered} = await getRecipes(apiParams);
     const totalPages = Math.ceil(total / limit);
+    const pageTitle= currentPath.search ? `Поиск: ${currentPath.search}` : "Рецепты"
 
     return (
         <ReceptyPage
@@ -42,6 +43,7 @@ export default async function RecipesContent({searchParams,}: { searchParams: Se
             fallbackTriggered={fallbackTriggered}
             recipes={recipes}
             currentPath={currentPath}
+            pageTitle={pageTitle}
         />
     );
 }

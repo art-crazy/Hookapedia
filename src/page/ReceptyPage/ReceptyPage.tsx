@@ -29,16 +29,16 @@ type BreadcrumbPath = {
 };
 
 export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath, pageTitle, finalBreadcrumbPaths}: {
-    recipes: Recipe[], 
-    fallbackTriggered: boolean; 
-    totalPages: number, 
+    recipes: Recipe[],
+    fallbackTriggered: boolean;
+    totalPages: number,
     currentPath: {
         diet?: string;
         cuisine?: string;
         category?: string;
         subcategory?: string;
     },
-    pageTitle?: string;
+    pageTitle: string;
     finalBreadcrumbPaths?: BreadcrumbPath[];
 }) => {
 
