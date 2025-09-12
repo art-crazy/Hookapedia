@@ -15,6 +15,7 @@ export default async function Home({searchParams,}: { searchParams: SearchParams
   const resolvedParams = await searchParams;
   const currentPage = Number(resolvedParams.page) || 1;
 
+  console.log('resolvedParams', resolvedParams)
   const currentPath = {
     diet: resolvedParams.diet,
     cuisine: resolvedParams.cuisine,
@@ -31,6 +32,9 @@ export default async function Home({searchParams,}: { searchParams: SearchParams
 
   const {items: recipes, total, limit, fallbackTriggered} = await getRecipes(apiParams);
   const totalPages = Math.ceil(total / limit);
+
+  console.log('currentPath', currentPath)
+
   return (
       <ReceptyPage
           totalPages={totalPages}

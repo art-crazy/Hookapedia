@@ -41,7 +41,6 @@ export const getRecipes = async (filters: RecipeFilters = {}): Promise<RecipeRes
     if (filters.cuisine_categories) params.append('cuisine_categories', filters.cuisine_categories);
     if (filters.diet_categories) params.append('diet_categories', filters.diet_categories);
 
-    console.log('debug', `${API_URL}/recipes?${params.toString()}`)
     const response = await fetchWithRetry(`${API_URL}/recipes?${params.toString()}`);
     return response.json();
   } catch (error) {
