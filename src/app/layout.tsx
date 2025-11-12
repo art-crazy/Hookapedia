@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
+import "@/styles/theme.config.scss";
 import "@/styles/globals.scss";
 import {LayoutWrapperUI} from "ui-hookapedia";
 import Header from "@/components/Header/Header";
