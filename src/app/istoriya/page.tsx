@@ -15,28 +15,29 @@ export default function HistoryPage() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Как всё начиналось</h2>
           <p className={styles.sectionText}>
-            «Что приготовить» родился из простой идеи: сделать кулинарию доступной и увлекательной для каждого.
-            В 2023 году группа энтузиастов, объединенных любовью к еде и технологиям, решила создать платформу,
-            где каждый может делиться своими рецептами и находить вдохновение для новых кулинарных экспериментов.
+            Хукапедия появилась из желания создать полный справочник по забивке кальяна и рецептам табачных миксов.
+            В 2024 году команда энтузиастов кальянной культуры решила объединить знания и опыт тысяч кальянщиков
+            в одной платформе, где можно найти любой рецепт забивки кальяна, миксы табака и советы по приготовлению.
           </p>
         </section>
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Наша миссия</h2>
           <p className={styles.sectionText}>
-            Мы верим, что приготовление пищи — это не просто процесс, а настоящее искусство,
-            которое объединяет людей. Наша цель — создать сообщество, где каждый может найти
-            рецепты, поделиться своим опытом и вдохновить других на кулинарные открытия.
+            Мы создаем крупнейшую базу рецептов кальяна и табачных миксов. Наша цель — помочь каждому кальянщику
+            найти идеальный рецепт забивки, узнать как правильно забивать кальян, подобрать миксы табака
+            и поделиться своими авторскими рецептами с сообществом.
           </p>
         </section>
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Что мы предлагаем</h2>
           <ul className={styles.list}>
-            <li className={styles.listItem}>Тысячи проверенных рецептов от профессиональных поваров и домашних кулинаров</li>
-            <li className={styles.listItem}>Удобный поиск по ингредиентам, категориям и сложности приготовления</li>
-            <li className={styles.listItem}>Возможность сохранять любимые рецепты и создавать свои коллекции</li>
-            <li className={styles.listItem}>Сообщество единомышленников, готовых делиться опытом и советами</li>
+            <li className={styles.listItem}>Тысячи проверенных рецептов забивки кальяна от опытных кальянщиков</li>
+            <li className={styles.listItem}>Подробные инструкции как забивать кальян на разных чашах и устройствах</li>
+            <li className={styles.listItem}>Популярные миксы табака с описанием вкусов и пропорций</li>
+            <li className={styles.listItem}>Рецепты кальяна по брендам: Darkside, Musthave, Tangiers, Daily Hookah и другие</li>
+            <li className={styles.listItem}>Сообщество кальянщиков для обмена опытом и новыми рецептами</li>
           </ul>
         </section>
 
@@ -44,16 +45,16 @@ export default function HistoryPage() {
           <h2 className={styles.sectionTitle}>Наши ценности</h2>
           <div className={styles.values}>
             <div className={styles.value}>
-              <h3 className={styles.valueTitle}>Качество</h3>
-              <p className={styles.valueText}>Мы тщательно проверяем каждый рецепт, чтобы вы могли быть уверены в результате</p>
+              <h3 className={styles.valueTitle}>Проверенные рецепты</h3>
+              <p className={styles.valueText}>Каждый рецепт забивки кальяна проверен на практике опытными кальянщиками</p>
             </div>
             <div className={styles.value}>
-              <h3 className={styles.valueTitle}>Сообщество</h3>
-              <p className={styles.valueText}>Создаем пространство для общения и обмена опытом между любителями кулинарии</p>
+              <h3 className={styles.valueTitle}>Открытое сообщество</h3>
+              <p className={styles.valueText}>Место для общения любителей кальяна, обмена миксами табака и секретами забивки</p>
             </div>
             <div className={styles.value}>
-              <h3 className={styles.valueTitle}>Инновации</h3>
-              <p className={styles.valueText}>Постоянно развиваем платформу, добавляя новые функции и улучшая пользовательский опыт</p>
+              <h3 className={styles.valueTitle}>Постоянное развитие</h3>
+              <p className={styles.valueText}>Добавляем новые рецепты кальяна, функции поиска и инструменты для кальянщиков</p>
             </div>
           </div>
         </section>

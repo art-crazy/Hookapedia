@@ -10,48 +10,45 @@ export default function BlogPage() {
           title="Блог"
           paths={[]}
         />
-        <h1 className={styles.title}>Блог «Что приготовить»</h1>
+        <h1 className={styles.title}>Блог Хукапедии</h1>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Разместите свой блог у нас</h2>
+          <h2 className={styles.sectionTitle}>Размещайте контент о кальянах</h2>
           <p className={styles.sectionText}>
-            «Что приготовить» предлагает уникальную возможность для блогеров и контент-мейкеров
-            в сфере кулинарии и гастрономии. Размещая свой контент на нашей платформе,
+            Хукапедия приглашает блогеров, кальянных мастеров и контент-мейкеров в сфере кальянной культуры.
+            Публикуя свои рецепты забивки кальяна, миксы табака и обзоры на нашей платформе,
             вы получаете:
           </p>
           <ul className={styles.list}>
-            <li className={styles.listItem}>Доступ к широкой аудитории любителей кулинарии</li>
-            <li className={styles.listItem}>Профессиональное оформление ваших материалов</li>
-            <li className={styles.listItem}>Возможность монетизации контента</li>
-            <li className={styles.listItem}>Техническую поддержку и аналитику</li>
+            <li className={styles.listItem}>Доступ к тысячам любителей кальяна и профессиональных кальянщиков</li>
+            <li className={styles.listItem}>Возможность делиться своими авторскими рецептами кальяна</li>
+            <li className={styles.listItem}>Продвижение ваших миксов табака и методик забивки</li>
+            <li className={styles.listItem}>Площадку для монетизации контента о кальянах</li>
           </ul>
         </section>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Сотрудничество</h2>
+          <h2 className={styles.sectionTitle}>Сотрудничество с кальянными брендами</h2>
           <p className={styles.sectionText}>
-            Мы открыты к различным формам сотрудничества:
+            Приглашаем производителей табака для кальяна, кальянного оборудования и аксессуаров к партнерству:
           </p>
           <ul className={styles.list}>
-            <li className={styles.listItem}>Размещение рекламных материалов</li>
-            <li className={styles.listItem}>Совместные проекты и акции</li>
-            <li className={styles.listItem}>Спонсорство мероприятий</li>
-            <li className={styles.listItem}>Интеграция брендов</li>
+            <li className={styles.listItem}>Размещение рецептов кальяна с вашим табаком</li>
+            <li className={styles.listItem}>Продвижение новых миксов и вкусов табака</li>
+            <li className={styles.listItem}>Совместные проекты с кальянными мастерами</li>
+            <li className={styles.listItem}>Реклама кальянного оборудования и девайсов</li>
           </ul>
         </section>
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Связаться с нами</h2>
           <p className={styles.sectionText}>
-            Для обсуждения возможностей сотрудничества, пожалуйста, напишите нам:
+            Для размещения рецептов кальяна или обсуждения партнерства, свяжитесь с нами:
           </p>
           <div className={styles.contactInfo}>
             <p className={styles.contactText}>
-              Email: <a href="mailto:info@chto-prigotovit.ru" className={styles.contactLink}>info@chto-prigotovit.ru</a>
+              Email: <a href="mailto:info@hookapedia.ru" className={styles.contactLink}>info@hookapedia.ru</a>
             </p>
-            {/*<p className={styles.contactText}>*/}
-            {/*  Телефон: <a href="tel:+78001234567" className={styles.contactLink}>8 (800) 123-45-67</a>*/}
-            {/*</p>*/}
           </div>
         </section>
       </div>
