@@ -5,6 +5,7 @@ import {LayoutWrapperUI} from "ui-hookapedia";
 import Header from "@/components/Header/Header";
 import React from "react";
 import YandexMetrika from "@/components/YandexMetrika/YandexMetrika";
+import {siteConfig} from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,8 @@ export default function RootLayout({
       >
       <YandexMetrika />
       <LayoutWrapperUI
-          HeaderChild={Header}>{children}
+          HeaderChild={Header}
+          siteName={siteConfig.metadata.name}>{children}
       </LayoutWrapperUI>
       </body>
     </html>

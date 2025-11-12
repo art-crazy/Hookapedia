@@ -2,6 +2,7 @@
 import {HeaderUI} from "ui-hookapedia";
 import {useRouter} from "next/navigation";
 import {useState} from "react";
+import {siteConfig} from "@/config/site";
 
 export default function Header () {
   const [query, setQuery] = useState('');
@@ -21,6 +22,8 @@ export default function Header () {
           query={query}
           setQuery={setQuery}
           handleSubmit={handleSubmit}
+          logoIcon={siteConfig.metadata.logo}
+          logoText={siteConfig.metadata.name}
       />
   )
 }
