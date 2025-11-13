@@ -79,20 +79,20 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Login to GitHub Container Registry
+            # Login to GHCR
             echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ secrets.SSH_USER }} --password-stdin
             
-            # Pull the latest image
+            # Pull latest image
             docker pull ${{ needs.build.outputs.image-main-tag }}
             
-            # Stop and remove old container if exists
+            # Stop/remove old frontend
             docker stop hookapedia || true
             docker rm hookapedia || true
             
-            # Run new container
             docker run -d \
               --name hookapedia \
               --restart unless-stopped \
+              --network my_network \
               -p 3000:3000 \
               ${{ needs.build.outputs.image-main-tag }}
             
@@ -101,4 +101,3 @@ jobs:
             
             # Show running containers
             docker ps
-            docker network connect my_network hookapedia-backend
