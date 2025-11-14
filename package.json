@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -13,7 +13,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.89.2",
-    "ui-hookapedia": "^1.0.81"
+    "ui-hookapedia": "^1.0.84"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
