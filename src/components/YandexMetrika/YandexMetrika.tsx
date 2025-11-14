@@ -2,7 +2,7 @@
 
 import Script from 'next/script';
 import React from 'react';
-import { YM_ID } from '../../config/ym.constants';
+import { YM_ID } from '@/config/ym.constants';
 
 export default function YandexMetrika() {
   return (
@@ -26,10 +26,10 @@ export default function YandexMetrika() {
       </Script>
       <noscript>
         <div>
-          <img 
-            src="https://mc.yandex.ru/watch/103415240" 
-            style={{ position: 'absolute', left: '-9999px' }} 
-            alt="" 
+          <img
+            src="https://mc.yandex.ru/watch/103415240"
+            style={{ position: 'absolute', left: '-9999px' }}
+            alt=""
           />
         </div>
       </noscript>
