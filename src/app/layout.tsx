@@ -6,6 +6,7 @@ import Header from "@/components/Header/Header";
 import React from "react";
 import YandexMetrika from "@/components/YandexMetrika/YandexMetrika";
 import {siteConfig} from "@/config/site";
+import AgeGate from "@/components/AgeGate/AgeGate";
 
 export {metadata} from "./metadata";
 
@@ -30,10 +31,12 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
       <YandexMetrika />
-      <LayoutWrapperUI
-          HeaderChild={Header}
-          siteName={siteConfig.metadata.name}>{children}
-      </LayoutWrapperUI>
+      <AgeGate>
+        <LayoutWrapperUI
+            HeaderChild={Header}
+            siteName={siteConfig.metadata.name}>{children}
+        </LayoutWrapperUI>
+      </AgeGate>
       </body>
     </html>
   );
