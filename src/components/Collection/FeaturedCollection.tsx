@@ -2,6 +2,7 @@ import styles from './FeaturedCollection.module.scss';
 import {Collection} from '@/types/collections';
 import ScrollableContainer from './ScrollableContainer';
 import ShowAllButton from './ShowAllButton';
+import Image from 'next/image';
 
 interface FeaturedCollectionProps {
   collection: Collection;
@@ -24,11 +25,11 @@ export function FeaturedCollection({ collection }: FeaturedCollectionProps) {
                     className={styles.featuredCard}>
                   <div className={styles.featuredCardImageContainer}>
                       {recipe.imageMain &&
-                          <img
+                          <Image
                               src={recipe.imageMain}
                               alt={recipe.title}
-                              width={400}
-                              height={300}
+                              width={800}
+                              height={450}
                               className={styles.featuredCardImage}
                           />
                       }

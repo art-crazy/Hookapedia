@@ -1,12 +1,13 @@
 'use client'
 import {HeaderUI} from "ui-hookapedia";
-import {useRouter} from "next/navigation";
+import {useRouter, usePathname} from "next/navigation";
 import {useState} from "react";
 import {siteConfig} from "@/config/site";
 
 export default function Header () {
   const [query, setQuery] = useState('');
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ export default function Header () {
           handleSubmit={handleSubmit}
           logoIcon={siteConfig.metadata.logo}
           logoText={siteConfig.metadata.name}
+          currentPath={pathname}
       />
   )
 }
