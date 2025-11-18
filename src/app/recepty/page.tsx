@@ -4,6 +4,7 @@ export { metadata };
 import {LIMIT} from "@/config/limit.constants";
 import {getRecipes} from "@/services/api";
 import {ReceptyPage} from "@/page/ReceptyPage";
+import {withRecipePlaceholders} from "@/utils/recipePlaceholders";
 
 type SearchParams = Promise<{
     diet?: string;
@@ -34,6 +35,7 @@ export default async function RecipesContent({searchParams,}: { searchParams: Se
     };
 
     const {items: recipes, total, limit, fallbackTriggered} = await getRecipes(apiParams);
+    const recipesWithImages = recipes.map(withRecipePlaceholders);
     const totalPages = Math.ceil(total / limit);
     const pageTitle= currentPath.search ? `Поиск: ${currentPath.search}` : "Рецепты"
 
@@ -41,7 +43,7 @@ export default async function RecipesContent({searchParams,}: { searchParams: Se
         <ReceptyPage
             totalPages={totalPages}
             fallbackTriggered={fallbackTriggered}
-            recipes={recipes}
+            recipes={recipesWithImages}
             currentPath={currentPath}
             pageTitle={pageTitle}
         />

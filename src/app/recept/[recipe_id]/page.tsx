@@ -2,6 +2,7 @@ import {notFound} from "next/navigation";
 import {Recipe} from "@/types/recipe";
 import {getRecipeById} from "@/services/api";
 import {ReceptPage} from "@/page/ReceptPage/ReceptPage";
+import {withRecipePlaceholders} from "@/utils/recipePlaceholders";
 
 interface PageProps {
   params: Promise<{
@@ -19,11 +20,12 @@ export default async function Page({ params }: PageProps) {
 
   try {
     const recipe:Recipe = await getRecipeById(id);
+    const preparedRecipe = withRecipePlaceholders(recipe);
     if (!recipe) {
       notFound();
     }
     return (
-        <ReceptPage recipe={recipe} />
+        <ReceptPage recipe={preparedRecipe} />
     )
   } catch (error) {
     console.error('Error loading recipe:', error);

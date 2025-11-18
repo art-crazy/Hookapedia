@@ -5,6 +5,7 @@ import {coolingCategories} from "@/data/categories/coolingCategories";
 import {strengthCategories} from "@/data/categories/strengthCategories";
 import {flavorCategoryCategories} from "@/data/categories/flavorCategoryCategories";
 import {mintCategories} from "@/data/categories/mintCategories";
+import {withRecipePlaceholders} from "@/utils/recipePlaceholders";
 
 const RECIPES_PATH = { title: "Рецепты", url: "/recepty", key: "/recepty" };
 
@@ -70,6 +71,7 @@ export default async function FilteredRecipesContent({ params, searchParams }: P
   };
 
   const { items: recipes, total, limit, fallbackTriggered } = await getRecipes(apiParams);
+  const recipesWithImages = recipes.map(withRecipePlaceholders);
   const totalPages = Math.ceil(total / limit);
 
   // Формируем пути для хлебных крошек
@@ -94,7 +96,7 @@ export default async function FilteredRecipesContent({ params, searchParams }: P
       <ReceptyPage
           totalPages={totalPages}
           fallbackTriggered={fallbackTriggered}
-          recipes={recipes}
+          recipes={recipesWithImages}
           currentPath={currentPath}
           pageTitle={pageTitle}
           finalBreadcrumbPaths={finalBreadcrumbPaths}
