@@ -101,56 +101,6 @@
     }
   }
 
-  .scrollArrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
-    background: var(--overlay-medium);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.2s, background-color 0.2s;
-    z-index: 3;
-    box-shadow: 0 4px 12px var(--shadow-xl);
-    border: none;
-
-    &:hover {
-      background: var(--bg-secondary);
-    }
-
-    &.left {
-      left: -24px;
-    }
-
-    &.right {
-      right: 40px;
-    }
-
-    svg {
-      width: 28px;
-      height: 28px;
-      fill: var(--color-text-muted);
-    }
-  }
-
-  &:hover {
-    .scrollArrow {
-      opacity: 1;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .featuredSection {
-    .scrollArrow {
-      display: none;
-    }
-  }
 }
 
 @media screen and (max-width: 650px) {
@@ -208,6 +158,10 @@
 .scrollableWrapper {
   position: relative;
   width: 100%;
+
+  &:hover :global(.scrollArrowFeatured) {
+    opacity: 1;
+  }
 }
 
 .scrollableContent {

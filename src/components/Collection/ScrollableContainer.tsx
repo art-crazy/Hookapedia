@@ -17,7 +17,7 @@ export default function ScrollableContainer({ children, scrollAmount }: Scrollab
       <div ref={containerRef} className={styles.scrollableContent}>
         {children}
       </div>
-      <ScrollArrows containerRef={containerRef} scrollAmount={scrollAmount} />
+      <ScrollArrows containerRef={containerRef} scrollAmount={scrollAmount} styleType="featured" />
     </section>
   );
 }

@@ -1,14 +1,15 @@
 'use client';
 
 import { RefObject } from 'react';
-import styles from './FeaturedCollection.module.scss';
+import styles from './ScrollArrows.module.scss';
 
 interface ScrollArrowsProps {
   containerRef: RefObject<HTMLDivElement | null>;
   scrollAmount: number;
+  styleType?: 'default' | 'featured';
 }
 
-export default function ScrollArrows({ containerRef, scrollAmount }: ScrollArrowsProps) {
+export default function ScrollArrows({ containerRef, scrollAmount, styleType = 'default' }: ScrollArrowsProps) {
   const scroll = (direction: 'left' | 'right') => {
     if (containerRef.current) {
       const currentScroll = containerRef.current.scrollLeft;
@@ -23,10 +24,14 @@ export default function ScrollArrows({ containerRef, scrollAmount }: ScrollArrow
     }
   };
 
+  const arrowClass = styleType === 'featured' ? styles.scrollArrowFeatured : styles.scrollArrow;
+
+  const baseClass = styleType === 'featured' ? 'scrollArrowFeatured' : 'scrollArrow';
+
   return (
     <>
       <button
-        className={`${styles.scrollArrow} ${styles.left}`}
+        className={`${arrowClass} ${styles.left} ${baseClass}`}
         onClick={() => scroll('left')}
         aria-label="Прокрутить влево"
       >
@@ -35,7 +40,7 @@ export default function ScrollArrows({ containerRef, scrollAmount }: ScrollArrow
         </svg>
       </button>
       <button
-        className={`${styles.scrollArrow} ${styles.right}`}
+        className={`${arrowClass} ${styles.right} ${baseClass}`}
         onClick={() => scroll('right')}
         aria-label="Прокрутить вправо"
       >

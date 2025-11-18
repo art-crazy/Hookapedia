@@ -1,7 +1,7 @@
 'use client'
 
 import {Collection, COLLECTION_TYPES} from "@/types/collections";
-import {DefaultCollection} from "ui-hookapedia";
+import {DefaultCollection} from "./DefaultCollection";
 import {FeaturedCollection} from "./FeaturedCollection";
 
 export const CollectionHome = ({collection}: { collection: Collection }) => {
