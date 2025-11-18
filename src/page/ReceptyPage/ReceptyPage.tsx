@@ -2,13 +2,13 @@
 
 import {
     ButtonSearch, Container,
-    FilterGroup,
     Filters, Pagination,
     ReceptyContent, RecipeList,
     RecipeListAll,
     RecipeListSection
 } from "ui-hookapedia";
 import {Breadcrumbs} from "@/components/Breadcrumbs";
+import {FilterGroup} from "@/components/Filters";
 import Image from "next/image";
 import Link from "next/link";
 import {Recipe} from "@/types/recipe";
