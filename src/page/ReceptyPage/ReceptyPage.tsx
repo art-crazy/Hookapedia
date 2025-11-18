@@ -1,7 +1,6 @@
 'use client'
 
 import {
-    Breadcrumbs,
     ButtonSearch, Container,
     FilterGroup,
     Filters, Pagination,
@@ -9,6 +8,7 @@ import {
     RecipeListAll,
     RecipeListSection
 } from "ui-hookapedia";
+import {Breadcrumbs} from "@/components/Breadcrumbs";
 import Image from "next/image";
 import Link from "next/link";
 import {Recipe} from "@/types/recipe";

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '@/components/shared/page.module.scss';
-import { Breadcrumbs } from 'ui-hookapedia';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export default function FAQPage() {
   return (
