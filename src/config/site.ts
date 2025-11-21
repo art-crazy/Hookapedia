@@ -3,11 +3,11 @@ export const siteConfig = {
     // Основные URL
     url: {
         // Производственный URL
-        production: 'https://chto-prigotovit.ru',
+        production: 'https://kalyany-mix.ru',
         // URL для разработки
         development: 'http://localhost:3000',
         // Текущий URL (будет определен в зависимости от окружения)
-        current: 'https://chto-prigotovit.ru'
+        current: 'https://kalyany-mix.ru'
     },
 
     // Пути сайта
