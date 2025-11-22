@@ -43,7 +43,7 @@ const faqData = [
 ];
 
 export default function FAQPage() {
-  const faqSchema = generateFAQPageSchema(faqData, siteConfig.url.current);
+  const faqSchema = generateFAQPageSchema(faqData, `${siteConfig.url.current}/faq`);
 
   return (
     <>

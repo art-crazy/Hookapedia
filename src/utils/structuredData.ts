@@ -152,6 +152,7 @@ export function generateOrganizationSchema(baseUrl: string, siteName: string) {
  */
 export function generateFAQPageSchema(
   faqs: Array<{ question: string; answer: string }>,
+  url: string
 ) {
   return {
     '@context': 'https://schema.org',
@@ -164,5 +165,6 @@ export function generateFAQPageSchema(
         text: faq.answer,
       },
     })),
+    url,
   };
 }
