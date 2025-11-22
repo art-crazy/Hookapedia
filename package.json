@@ -13,8 +13,7 @@
     "next": "15.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.89.2",
-    "ui-hookapedia": "^1.0.87"
+    "sass": "^1.89.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
