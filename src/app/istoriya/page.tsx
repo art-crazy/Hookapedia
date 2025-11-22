@@ -3,6 +3,8 @@ import styles from '@/components/shared/page.module.scss';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { siteConfig } from '@/config/site';
 
+export { metadata } from './metadata';
+
 export default function HistoryPage() {
   return (
     <div className={styles.page}>

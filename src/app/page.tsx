@@ -8,6 +8,7 @@ import {recipes} from "@/data";
 import {StructuredData} from "@/components/StructuredData";
 import {generateWebSiteSchema, generateOrganizationSchema} from "@/utils/structuredData";
 import {siteConfig} from "@/config/site";
+import styles from "@/styles/headings.module.scss";
 
 interface CollectionCategories {
 	id: number;
@@ -122,6 +123,9 @@ export default function Home() {
 		<>
 			<StructuredData data={[websiteSchema, organizationSchema]} />
 			<ContainerHome>
+				<h1 className={styles.pageTitle}>
+					Лучшие рецепты кальянов и миксы табака
+				</h1>
 				{collections.map((collection, index) =>
 					<CollectionHome
 						key={index}
