@@ -14,26 +14,26 @@ type FlavorCategoryCategories = {
 export const flavorCategoryCategories: FlavorCategoryCategories = {
     'frukty': {
         id: 'frukty',
-        title: 'Фрукты'
+        title: 'Фруктовый вкус'
     },
     'yagody': {
         id: 'yagody',
-        title: 'Ягоды'
+        title: 'Ягодный вкус'
     },
     'tsitrusovye': {
         id: 'tsitrusovye',
-        title: 'Цитрусовые'
+        title: 'Цитрусовый вкус'
     },
     'deserty': {
         id: 'deserty',
-        title: 'Десерты'
+        title: 'Десертный вкус'
     },
     'pryanosti-travy': {
         id: 'pryanosti-travy',
-        title: 'Пряности/травы'
+        title: 'Пряности и травы'
     },
     'ekzotika': {
         id: 'ekzotika',
-        title: 'Экзотика'
+        title: 'Экзотический вкус'
     }
 };

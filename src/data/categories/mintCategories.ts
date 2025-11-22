@@ -10,10 +10,10 @@ type MintCategories = {
 export const mintCategories: MintCategories = {
     's-myatoy': {
         id: 's-myatoy',
-        title: 'Есть'
+        title: 'С мятой'
     },
     'bez-myaty': {
         id: 'bez-myaty',
-        title: 'Нет'
+        title: 'Без мяты'
     }
 };

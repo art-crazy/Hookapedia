@@ -11,14 +11,14 @@ type StrengthCategories = {
 export const strengthCategories: StrengthCategories = {
     'legkaya-krepost': {
         id: 'legkaya-krepost',
-        title: 'Лёгкая'
+        title: 'Лёгкая крепость'
     },
     'srednyaya-krepost': {
         id: 'srednyaya-krepost',
-        title: 'Средняя'
+        title: 'Средняя крепость'
     },
     'krepkaya-krepost': {
         id: 'krepkaya-krepost',
-        title: 'Крепкая'
+        title: 'Крепкая крепость'
     }
 };

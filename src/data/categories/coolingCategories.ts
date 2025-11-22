@@ -11,14 +11,14 @@ type CoolingCategories = {
 export const coolingCategories: CoolingCategories = {
     'bez-kholoda': {
         id: 'bez-kholoda',
-        title: 'Нет'
+        title: 'Без холодка'
     },
     'legkiy-kholod': {
         id: 'legkiy-kholod',
-        title: 'Лёгкий холод'
+        title: 'Лёгкий холодок'
     },
     'silnyy-kholod': {
         id: 'silnyy-kholod',
-        title: 'Сильный холод'
+        title: 'Сильный холодок'
     }
 };
