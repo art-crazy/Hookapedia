@@ -2,23 +2,23 @@
 import {BaseCategory} from "@/data/categories/type";
 
 type StrengthCategories = {
-    'legkaya': BaseCategory;
-    'srednyaya': BaseCategory;
-    'krepkaya': BaseCategory;
+    'legkaya-krepost': BaseCategory;
+    'srednyaya-krepost': BaseCategory;
+    'krepkaya-krepost': BaseCategory;
 };
 
 // Крепость
 export const strengthCategories: StrengthCategories = {
-    'legkaya': {
-        id: 'legkaya',
+    'legkaya-krepost': {
+        id: 'legkaya-krepost',
         title: 'Лёгкая'
     },
-    'srednyaya': {
-        id: 'srednyaya',
+    'srednyaya-krepost': {
+        id: 'srednyaya-krepost',
         title: 'Средняя'
     },
-    'krepkaya': {
-        id: 'krepkaya',
+    'krepkaya-krepost': {
+        id: 'krepkaya-krepost',
         title: 'Крепкая'
     }
 };
