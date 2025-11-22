@@ -1,21 +1,13 @@
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import { notFound } from 'next/navigation';
-import {cuisineCategories, dietCategories, dishCategories} from "ui-hookapedia/dist/data/categories";
+import {strengthCategories} from "@/data/categories/strengthCategories";
+import {flavorCategoryCategories} from "@/data/categories/flavorCategoryCategories";
+import {coolingCategories} from "@/data/categories/coolingCategories";
+import {mintCategories} from "@/data/categories/mintCategories";
 
 type Props = {
   params: Promise<{ filters: string[] }>
-};
-
-type CategoryWithSubcategories = {
-  id: string;
-  title: string;
-  subcategories: {
-    [key: string]: {
-      id: string;
-      title: string;
-    };
-  };
 };
 
 type BaseCategory = {
@@ -24,9 +16,10 @@ type BaseCategory = {
 };
 
 const categoryMaps = {
-  diet: dietCategories as Record<string, BaseCategory>,
-  cuisine: cuisineCategories as Record<string, BaseCategory>,
-  dish: dishCategories as Record<string, CategoryWithSubcategories>
+  strength: strengthCategories as Record<string, BaseCategory>,
+  flavor: flavorCategoryCategories as Record<string, BaseCategory>,
+  cooling: coolingCategories as Record<string, BaseCategory>,
+  mint: mintCategories as Record<string, BaseCategory>
 };
 
 function getCategoryTitle(filter: string): string | undefined {
@@ -38,14 +31,6 @@ function getCategoryTitle(filter: string): string | undefined {
   return undefined;
 }
 
-function getSubcategoryTitle(category: string, subcategory: string): string | undefined {
-  const categoryData = dishCategories[category as keyof typeof dishCategories];
-  if (categoryData && 'subcategories' in categoryData) {
-    return categoryData.subcategories[subcategory]?.title;
-  }
-  return undefined;
-}
-
 function generateMetadataForFilters(filters: string[]): {
   title: string;
   description: string;
@@ -53,22 +38,17 @@ function generateMetadataForFilters(filters: string[]): {
   ogDescription: string;
 } {
   const currentPath = {
-    diet: filters.find(filter => filter in dietCategories),
-    cuisine: filters.find(filter => filter in cuisineCategories),
-    category: filters.find(filter => filter in dishCategories),
-    subcategory: filters.find((filter, index) => {
-      const prevFilter = filters[index - 1];
-      return prevFilter && prevFilter in dishCategories &&
-             filter in dishCategories[prevFilter as keyof typeof dishCategories].subcategories;
-    })
+    strength: filters.find(filter => filter in strengthCategories),
+    flavor: filters.find(filter => filter in flavorCategoryCategories),
+    cooling: filters.find(filter => filter in coolingCategories),
+    mint: filters.find(filter => filter in mintCategories)
   };
 
   const titles = {
-    diet: currentPath.diet ? getCategoryTitle(currentPath.diet) : undefined,
-    cuisine: currentPath.cuisine ? getCategoryTitle(currentPath.cuisine) : undefined,
-    category: currentPath.category ? getCategoryTitle(currentPath.category) : undefined,
-    subcategory: currentPath.category && currentPath.subcategory ?
-      getSubcategoryTitle(currentPath.category, currentPath.subcategory) : undefined
+    strength: currentPath.strength ? getCategoryTitle(currentPath.strength) : undefined,
+    flavor: currentPath.flavor ? getCategoryTitle(currentPath.flavor) : undefined,
+    cooling: currentPath.cooling ? getCategoryTitle(currentPath.cooling) : undefined,
+    mint: currentPath.mint ? getCategoryTitle(currentPath.mint) : undefined
   };
 
   // Проверяем наличие нескольких фильтров
@@ -77,10 +57,10 @@ function generateMetadataForFilters(filters: string[]): {
   // Если есть несколько фильтров, используем комбинированный формат
   if (hasMultipleFilters) {
     const parts = [
-      titles.category,
-      titles.diet,
-      titles.cuisine,
-      titles.subcategory
+      titles.strength,
+      titles.flavor,
+      titles.cooling,
+      titles.mint
     ].filter(Boolean);
 
     if (parts.length > 0) {
@@ -96,39 +76,39 @@ function generateMetadataForFilters(filters: string[]): {
   }
 
   // Если только один фильтр, используем соответствующий формат
-  if (titles.cuisine) {
+  if (titles.strength) {
     return {
-      title: `${titles.cuisine} — традиционные рецепты, вкусы и блюда национальной кухни`,
-      description: `${titles.cuisine} в одном месте: супы, закуски, горячее, гарниры, десерты и уличная еда. Лучшие рецепты с пошаговыми инструкциями — готовьте дома легко, быстро и вкусно.`,
-      ogTitle: `${titles.cuisine}: лучшие рецепты и блюда`,
-      ogDescription: `Попробуйте дома блюда, которыми славится ${titles.cuisine}. Подборка проверенных рецептов с пошаговыми инструкциями и насыщенным вкусом.`
+      title: `${titles.strength} — рецепты кальянов с детальными инструкциями | ${siteConfig.metadata.name}`,
+      description: `${titles.strength} кальян: подборка разнообразных рецептов. Лучшие миксы табака с пошаговыми инструкциями.`,
+      ogTitle: `${titles.strength}: лучшие рецепты кальянов`,
+      ogDescription: `Ищете рецепты кальянов ${titles.strength}? Здесь собраны проверенные миксы табака — просто и со вкусом.`
     };
   }
 
-  if (titles.diet) {
+  if (titles.flavor) {
     return {
-      title: `${titles.diet} — рецепты кальянов с детальными инструкциями | ${siteConfig.metadata.name}`,
-      description: `${titles.diet}: подборка разнообразных рецептов кальянов. Лучшие миксы табака с пошаговыми инструкциями.`,
-      ogTitle: `${titles.diet}: лучшие рецепты кальянов`,
-      ogDescription: `Ищете рецепты кальянов ${titles.diet}? Здесь собраны проверенные миксы табака — просто и со вкусом.`
+      title: `${titles.flavor} — вкусные рецепты кальянов на каждый день | ${siteConfig.metadata.name}`,
+      description: `Подборка лучших рецептов кальянов в категории «${titles.flavor}»: оригинальные миксы табака для домашнего кальяна. Забивай легко — удивляй вкусом.`,
+      ogTitle: `${titles.flavor} — лучшие рецепты кальянов`,
+      ogDescription: `Откройте для себя проверенные рецепты кальянов в категории «${titles.flavor}»: вкусно, доступно и просто.`
     };
   }
 
-  if (titles.category) {
+  if (titles.cooling) {
     return {
-      title: `${titles.category} — вкусные рецепты кальянов на каждый день | ${siteConfig.metadata.name}`,
-      description: `Подборка лучших рецептов кальянов в категории «${titles.category}»: оригинальные миксы табака для домашнего кальяна. Забивай легко — удивляй вкусом.`,
-      ogTitle: `${titles.category} — лучшие рецепты кальянов`,
-      ogDescription: `Откройте для себя проверенные рецепты кальянов в категории «${titles.category}»: вкусно, доступно и просто.`
+      title: `${titles.cooling} — лучшие рецепты кальянов с подробным описанием | ${siteConfig.metadata.name}`,
+      description: `${titles.cooling} — Вкусные рецепты кальянов: от классических до оригинальных миксов табака. Забивай быстро и разнообразно с нашими проверенными рецептами.`,
+      ogTitle: `Лучшие рецепты кальянов: ${titles.cooling}`,
+      ogDescription: `Ищете ${titles.cooling}? Смотрите проверенные рецепты кальянов с пошаговыми инструкциями и советами.`
     };
   }
 
-  if (titles.subcategory) {
+  if (titles.mint) {
     return {
-      title: `${titles.subcategory} — лучшие рецепты кальянов с подробным описанием | ${siteConfig.metadata.name}`,
-      description: `${titles.subcategory} — Вкусные рецепты кальянов: от классических до оригинальных миксов табака. Забивай быстро и разнообразно с нашими проверенными рецептами.`,
-      ogTitle: `Лучшие рецепты кальянов: ${titles.subcategory}`,
-      ogDescription: `Ищете ${titles.subcategory}? Смотрите проверенные рецепты кальянов с пошаговыми инструкциями и советами.`
+      title: `${titles.mint} — лучшие рецепты кальянов с подробным описанием | ${siteConfig.metadata.name}`,
+      description: `${titles.mint} мята — Вкусные рецепты кальянов: от классических до оригинальных миксов табака. Забивай быстро и разнообразно с нашими проверенными рецептами.`,
+      ogTitle: `Лучшие рецепты кальянов: ${titles.mint} мята`,
+      ogDescription: `Ищете рецепты с мятой? Смотрите проверенные рецепты кальянов с пошаговыми инструкциями и советами.`
     };
   }
 
