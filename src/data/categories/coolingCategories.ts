@@ -7,6 +7,8 @@ type CoolingCategories = {
     'silnyy-kholod': BaseCategory;
 };
 
+console.log('1')
+
 // Наличие холодка
 export const coolingCategories: CoolingCategories = {
     'bez-kholoda': {
