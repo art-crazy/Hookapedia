@@ -6,6 +6,7 @@ import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {Key} from 'react';
 import {Container} from '@/components/Container';
 import {Recipe} from "@/types/recipe";
+import Image from 'next/image';
 
 export const Mix = ({recipe}: { recipe: Recipe }) => {
   return (
@@ -21,7 +22,7 @@ export const Mix = ({recipe}: { recipe: Recipe }) => {
           <div className={styles.imageColumn}>
             {recipe.imageMain && (
                 <div className={styles.mainImage}>
-                  <img
+                  <Image
                       className={styles.imageMain}
                       src={recipe.imageMain}
                       alt={recipe.title}
@@ -69,7 +70,7 @@ export const Mix = ({recipe}: { recipe: Recipe }) => {
                   <h3 className={styles.stepTitle}>{step.title}</h3>
                   {step.image && (
                     <div className={styles.stepImage}>
-                      <img
+                      <Image
                         className={styles.image}
                         src={step.image}
                         alt={`${step.title}`}
