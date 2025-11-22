@@ -166,10 +166,8 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
                     <Pagination
                         currentPage={1}
                         totalPages={totalPages}
-                        // baseUrl={`/recepty/${filters.join('/')}`}
                         baseUrl={`/recepty/`}
-                        // searchParams={{ search: currentPath.search }}
-                        searchParams={{ search: 'currentPath.search '}}
+                        searchParams={{}}
                         Link={Link}
                     />
                 )}
