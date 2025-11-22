@@ -13,7 +13,6 @@ export default function FAQPage() {
           title="Вопросы и ответы"
           paths={[]}
         />
-        <h1 className={styles.title}>Вопросы и ответы</h1>
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Общие вопросы о кальяне</h2>

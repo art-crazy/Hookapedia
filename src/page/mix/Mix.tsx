@@ -35,7 +35,6 @@ export const Mix = ({recipe}: { recipe: Recipe }) => {
             )}
           </div>
           <div className={styles.infoBlock}>
-            <h1 itemProp="name">{recipe.title}</h1>
             <div className={styles.rating} itemProp="aggregateRating" itemScope
                  itemType="https://schema.org/AggregateRating">
               {!!recipe.rating &&

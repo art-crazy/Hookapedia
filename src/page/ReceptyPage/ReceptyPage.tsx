@@ -16,7 +16,6 @@ import {coolingCategories} from "@/data/categories/coolingCategories";
 import {mintCategories} from "@/data/categories/mintCategories";
 import {useState} from "react";
 import {useRouter} from "next/navigation";
-import styles from "@/styles/headings.module.scss";
 
 
 type FilterType = 'diet' | 'cuisine' | 'category' | 'subcategory';
@@ -117,13 +116,9 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
     return (
         <Container>
             <Breadcrumbs
-                title={pageTitle || "Рецепты"}
+                title={pageTitle || "Все рецепты кальянов"}
                 paths={finalBreadcrumbPaths || []}
             />
-
-            <h1 className={styles.sectionTitle}>
-                {pageTitle || "Все рецепты кальянов"}
-            </h1>
 
             <ReceptyContent>
                 <Filters>

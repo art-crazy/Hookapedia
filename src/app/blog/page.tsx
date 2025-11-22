@@ -13,7 +13,6 @@ export default function BlogPage() {
           title="Блог"
           paths={[]}
         />
-        <h1 className={styles.title}>Блог {siteConfig.metadata.name}</h1>
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Размещайте контент о кальянах</h2>

@@ -13,7 +13,6 @@ export default function HistoryPage() {
           title="Наша история"
           paths={[]}
         />
-        <h1 className={styles.title}>Наша история</h1>
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Как всё начиналось</h2>
