@@ -84,8 +84,8 @@ function generateMetadataForFilters(filters: string[]): {
     ].filter(Boolean);
 
     if (parts.length > 0) {
-      const combinedTitle = `${parts.join('. ')} — лучшие рецепты с пошаговыми инструкциями | Что приготовить`;
-      const combinedDescription = `${parts.join('. ')}. Все рецепты. Найди что приготовить.`;
+      const combinedTitle = `${parts.join('. ')} — лучшие рецепты кальянов с пошаговыми инструкциями | ${siteConfig.metadata.name}`;
+      const combinedDescription = `${parts.join('. ')}. Все рецепты кальянов. Найди идеальный микс табака.`;
       return {
         title: combinedTitle,
         description: combinedDescription,
@@ -107,28 +107,28 @@ function generateMetadataForFilters(filters: string[]): {
 
   if (titles.diet) {
     return {
-      title: `${titles.diet} — рецепты для правильного и вкусного питания каждый день | Что приготовить`,
-      description: `${titles.diet}: подборка разнообразных рецептов на завтрак, обед и ужин. Сытные, полезные и простые блюда, которые легко готовить дома.`,
-      ogTitle: `${titles.diet}: лучшие рецепты и блюда`,
-      ogDescription: `Ищете вкусные и подходящие под ${titles.diet} рецепты? Здесь собраны проверенные блюда на каждый день — просто, полезно и без лишнего.`
+      title: `${titles.diet} — рецепты кальянов с детальными инструкциями | ${siteConfig.metadata.name}`,
+      description: `${titles.diet}: подборка разнообразных рецептов кальянов. Лучшие миксы табака с пошаговыми инструкциями.`,
+      ogTitle: `${titles.diet}: лучшие рецепты кальянов`,
+      ogDescription: `Ищете рецепты кальянов ${titles.diet}? Здесь собраны проверенные миксы табака — просто и со вкусом.`
     };
   }
 
   if (titles.category) {
     return {
-      title: `${titles.category} — вкусные и простые рецепты на каждый день | Что приготовить`,
-      description: `Подборка лучших рецептов в категории «${titles.category}»: быстрые, сытные и оригинальные блюда для домашнего меню. Готовьте легко — удивляйте вкусом.`,
-      ogTitle: `${titles.category} — лучшие рецепты`,
-      ogDescription: `Откройте для себя проверенные рецепты в категории «${titles.category}»: вкусно, доступно и по-домашнему.`
+      title: `${titles.category} — вкусные рецепты кальянов на каждый день | ${siteConfig.metadata.name}`,
+      description: `Подборка лучших рецептов кальянов в категории «${titles.category}»: оригинальные миксы табака для домашнего кальяна. Забивай легко — удивляй вкусом.`,
+      ogTitle: `${titles.category} — лучшие рецепты кальянов`,
+      ogDescription: `Откройте для себя проверенные рецепты кальянов в категории «${titles.category}»: вкусно, доступно и просто.`
     };
   }
 
   if (titles.subcategory) {
     return {
-      title: `${titles.subcategory} — лучшие рецепты с подробным и пошаговым описанием | Что поесть`,
-      description: `${titles.subcategory} — Вкусные и простые рецепты на каждый день: от классических до оригинальных. Готовьте быстро, полезно и разнообразно с нашими проверенными рецептами.`,
-      ogTitle: `Лучшие рецепты: ${titles.subcategory}`,
-      ogDescription: `Ищете вкусные ${titles.subcategory}? Смотрите проверенные рецепты с пошаговыми инструкциями и советами. Всё просто и по-домашнему.`
+      title: `${titles.subcategory} — лучшие рецепты кальянов с подробным описанием | ${siteConfig.metadata.name}`,
+      description: `${titles.subcategory} — Вкусные рецепты кальянов: от классических до оригинальных миксов табака. Забивай быстро и разнообразно с нашими проверенными рецептами.`,
+      ogTitle: `Лучшие рецепты кальянов: ${titles.subcategory}`,
+      ogDescription: `Ищете ${titles.subcategory}? Смотрите проверенные рецепты кальянов с пошаговыми инструкциями и советами.`
     };
   }
 
@@ -146,15 +146,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: metadata.title,
     description: metadata.description,
     keywords: [
-      'рецепты',
-      'кулинарные рецепты',
-      'домашние рецепты',
-      'пошаговые рецепты',
-      'что приготовить',
-      'кулинария',
-      'готовим дома',
-      'вкусные рецепты',
-      'простые рецепты'
+      'рецепты кальянов',
+      'миксы табака',
+      'забивка кальяна',
+      'кальян дома',
+      'как забить кальян',
+      'вкусы кальяна',
+      'табак для кальяна',
+      'кальянные миксы',
+      'рецепты забивки'
     ],
     openGraph: {
       title: metadata.ogTitle,

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '@/components/shared/page.module.scss';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { siteConfig } from '@/config/site';
 
 export default function HistoryPage() {
   return (
@@ -15,7 +16,7 @@ export default function HistoryPage() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Как всё начиналось</h2>
           <p className={styles.sectionText}>
-            Хукапедия появилась из желания создать полный справочник по забивке кальяна и рецептам табачных миксов.
+            {siteConfig.metadata.name} появилась из желания создать полный справочник по забивке кальяна и рецептам табачных миксов.
             В 2024 году команда энтузиастов кальянной культуры решила объединить знания и опыт тысяч кальянщиков
             в одной платформе, где можно найти любой рецепт забивки кальяна, миксы табака и советы по приготовлению.
           </p>

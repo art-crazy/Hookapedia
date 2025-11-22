@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '@/components/shared/page.module.scss';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { siteConfig } from '@/config/site';
 
 export default function BlogPage() {
   return (
@@ -10,12 +11,12 @@ export default function BlogPage() {
           title="Блог"
           paths={[]}
         />
-        <h1 className={styles.title}>Блог Хукапедии</h1>
+        <h1 className={styles.title}>Блог {siteConfig.metadata.name}</h1>
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Размещайте контент о кальянах</h2>
           <p className={styles.sectionText}>
-            Хукапедия приглашает блогеров, кальянных мастеров и контент-мейкеров в сфере кальянной культуры.
+            {siteConfig.metadata.name} приглашает блогеров, кальянных мастеров и контент-мейкеров в сфере кальянной культуры.
             Публикуя свои рецепты забивки кальяна, миксы табака и обзоры на нашей платформе,
             вы получаете:
           </p>

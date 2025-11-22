@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '@/components/shared/page.module.scss';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { siteConfig } from '@/config/site';
 
 export default function FAQPage() {
   return (
@@ -16,16 +17,16 @@ export default function FAQPage() {
           <h2 className={styles.sectionTitle}>Общие вопросы о кальяне</h2>
 
           <div className={styles.faqItem}>
-            <h3 className={styles.question}>Что такое Хукапедия?</h3>
+            <h3 className={styles.question}>Что такое {siteConfig.metadata.name}?</h3>
             <p className={styles.answer}>
-              Хукапедия — это крупнейшая база рецептов забивки кальяна и миксов табака. У нас вы найдете
+              {siteConfig.metadata.name} — это крупнейшая база рецептов забивки кальяна и миксов табака. У нас вы найдете
               тысячи проверенных рецептов кальяна от опытных кальянщиков, инструкции как забивать кальян,
               популярные миксы табака и сможете поделиться своими авторскими рецептами.
             </p>
           </div>
 
           <div className={styles.faqItem}>
-            <h3 className={styles.question}>Как начать пользоваться Хукапедией?</h3>
+            <h3 className={styles.question}>Как начать пользоваться {siteConfig.metadata.nameInstrumental}?</h3>
             <p className={styles.answer}>
               Просто заходите на сайт и ищите рецепты забивки кальяна через поиск или фильтры по брендам табака,
               крепости и вкусам. После регистрации вы сможете сохранять понравившиеся рецепты кальяна,

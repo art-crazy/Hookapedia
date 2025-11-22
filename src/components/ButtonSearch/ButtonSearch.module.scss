@@ -1,0 +1,28 @@
+.filterActions {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-secondary);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.applyButton {
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: var(--color-black);
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover:not(.disabled) {
+    background: var(--primary-color-hover);
+  }
+
+  &.disabled {
+    background: var(--bg-disabled);
+    color: var(--color-text-disabled);
+    cursor: not-allowed;
+  }
+}
