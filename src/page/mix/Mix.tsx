@@ -7,8 +7,12 @@ import {Key} from 'react';
 import {Container} from '@/components/Container';
 import {Recipe} from "@/types/recipe";
 import Image from 'next/image';
+import {RelatedRecipes} from '@/components/RelatedRecipes';
+import {getRelatedRecipes} from '@/utils/getRelatedRecipes';
+import {CategoryLinks} from '@/components/CategoryLinks';
 
 export const Mix = ({recipe}: { recipe: Recipe }) => {
+  const relatedRecipes = getRelatedRecipes(recipe, 3);
   return (
       <Container>
         <Breadcrumbs
@@ -84,6 +88,8 @@ export const Mix = ({recipe}: { recipe: Recipe }) => {
               ))}
           </section>
         }
+        <CategoryLinks recipe={recipe} />
+        <RelatedRecipes recipes={relatedRecipes} />
       </Container>
     );
 }
