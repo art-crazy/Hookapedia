@@ -145,3 +145,24 @@ export function generateOrganizationSchema(baseUrl: string, siteName: string) {
     ],
   };
 }
+
+/**
+ * Генерирует JSON-LD для FAQPage Schema
+ * Подходит для Яндекс и Google
+ */
+export function generateFAQPageSchema(
+  faqs: Array<{ question: string; answer: string }>,
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}

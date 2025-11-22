@@ -17,6 +17,10 @@ const LINKS = [
         text: 'Вопросы и ответы',
         url: "/faq",
     },
+    {
+        text: 'Глоссарий',
+        url: "/glossarij",
+    },
 ]
 
 interface FooterUIProps {

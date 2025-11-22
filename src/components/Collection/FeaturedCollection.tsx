@@ -20,32 +20,33 @@ export function FeaturedCollection({ collection }: FeaturedCollectionProps) {
       <ScrollableContainer scrollAmount={832}>
         <ul className={styles.featuredCardsContainer}>
           {collection.recipes.map((recipe) => (
-              <a href={recipe?.link ? recipe?.link : `/recept/${recipe.name}-${recipe.id}`}
-                    key={recipe.id}
-                    className={styles.featuredCard}>
-                  <div className={styles.featuredCardImageContainer}>
-                      {recipe.imageMain &&
-                          <Image
-                              src={recipe.imageMain}
-                              alt={recipe.title}
-                              fill
-                              className={styles.featuredCardImage}
-                              priority={recipe.id === 364}
-                              sizes="800px"
-                          />
-                      }
-                      <div className={styles.featuredCardContent}>
-                          <h3 className={styles.featuredCardTitle}>{recipe.title}</h3>
-                          <p className={styles.featuredCardDescription}>{recipe.description}</p>
-                          <div className={styles.featuredCardMeta}>
-                              <span>{recipe?.cookTime}</span>
-                              {recipe?.rating &&
-                                <span>★ {recipe?.rating}</span>
-                              }
-                          </div>
-                      </div>
-                </div>
-              </a>
+              <li key={recipe.id} className={styles.featuredCard}>
+                <a href={recipe?.link ? recipe?.link : `/recept/${recipe.name}-${recipe.id}`}
+                      className={styles.featuredCardLink}>
+                    <div className={styles.featuredCardImageContainer}>
+                        {recipe.imageMain &&
+                            <Image
+                                src={recipe.imageMain}
+                                alt={recipe.title}
+                                fill
+                                className={styles.featuredCardImage}
+                                priority={recipe.id === 364}
+                                sizes="800px"
+                            />
+                        }
+                        <div className={styles.featuredCardContent}>
+                            <h3 className={styles.featuredCardTitle}>{recipe.title}</h3>
+                            <p className={styles.featuredCardDescription}>{recipe.description}</p>
+                            <div className={styles.featuredCardMeta}>
+                                <span>{recipe?.cookTime}</span>
+                                {recipe?.rating &&
+                                  <span>★ {recipe?.rating}</span>
+                                }
+                            </div>
+                        </div>
+                  </div>
+                </a>
+              </li>
           ))}
           <li><ShowAllButton link={collection.link} /></li>
         </ul>
