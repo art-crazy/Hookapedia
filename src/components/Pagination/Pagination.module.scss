@@ -1,0 +1,30 @@
+@use '@/styles/mixins' as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.pageLink {
+  @include button-secondary;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+
+  &.active {
+    @include button-active;
+  }
+}
+
+.ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-text-primary);
+}

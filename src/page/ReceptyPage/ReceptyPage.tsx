@@ -2,7 +2,7 @@
 
 import {
     Container,
-    Filters, Pagination,
+    Filters,
     ReceptyContent, RecipeList,
     RecipeListAll,
     RecipeListSection
@@ -10,6 +10,7 @@ import {
 import {Breadcrumbs} from "@/components/Breadcrumbs";
 import {FilterGroup} from "@/components/Filters";
 import {ButtonSearch} from "@/components/ButtonSearch";
+import {Pagination} from "@/components/Pagination";
 import Image from "next/image";
 import Link from "next/link";
 import {Recipe} from "@/types/recipe";

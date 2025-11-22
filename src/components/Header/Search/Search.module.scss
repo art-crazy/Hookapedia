@@ -1,3 +1,5 @@
+@use '@/styles/mixins' as *;
+
 .searchContainer {
   position: relative;
   flex: 1;
@@ -32,20 +34,11 @@
 }
 
 .searchButton {
+  @include button-primary;
   padding: 8px 24px;
-  background: var(--primary-color);
-  color: var(--color-black);
-  border: 1px solid var(--primary-color);
   border-radius: 0 8px 8px 0;
   font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
   white-space: nowrap;
-
-  &:hover {
-    background: var(--primary-color-hover);
-  }
 }
 
 @media screen and (max-width: 650px) {
