@@ -28,9 +28,10 @@ export function FeaturedCollection({ collection }: FeaturedCollectionProps) {
                           <Image
                               src={recipe.imageMain}
                               alt={recipe.title}
-                              width={800}
-                              height={450}
+                              fill
                               className={styles.featuredCardImage}
+                              priority={recipe.id === 364}
+                              sizes="800px"
                           />
                       }
                       <div className={styles.featuredCardContent}>

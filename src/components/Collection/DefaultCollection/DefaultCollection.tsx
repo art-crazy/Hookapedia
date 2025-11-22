@@ -26,7 +26,7 @@ export function DefaultCollection({ collection }: DefaultCollectionProps) {
       <div className={styles.scrollableWrapper}>
         <div ref={containerRef} className={styles.scrollableContent}>
           <ul className={styles.cardsContainer}>
-            {collection.recipes.map((recipe) => (
+            {collection.recipes.map((recipe, index) => (
               <li key={recipe.id} className={styles.card}>
                 <Link href={`/recept/${recipe.name}-${recipe.id}`}>
                   {recipe.imageMain && (
@@ -36,6 +36,8 @@ export function DefaultCollection({ collection }: DefaultCollectionProps) {
                       width={300}
                       height={200}
                       className={styles.cardImage}
+                      style={{ width: 'auto', height: 'auto' }}
+                      priority={recipe.id === 364 && index === 0}
                     />
                   )}
                   <div className={styles.cardContent}>
