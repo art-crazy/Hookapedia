@@ -6,6 +6,9 @@ import {strengthCategories} from "@/data/categories/strengthCategories";
 import {flavorCategoryCategories} from "@/data/categories/flavorCategoryCategories";
 import {mintCategories} from "@/data/categories/mintCategories";
 import {withRecipePlaceholders} from "@/utils/recipePlaceholders";
+import {StructuredData} from "@/components/StructuredData";
+import {generateBreadcrumbSchema, generateItemListSchema} from "@/utils/structuredData";
+import {siteConfig} from "@/config/site";
 
 const RECIPES_PATH = { title: "Рецепты", url: "/recepty", key: "/recepty" };
 
@@ -92,14 +95,29 @@ export default async function FilteredRecipesContent({ params, searchParams }: P
   // Убираем последний элемент из хлебных крошек, так как он будет в заголовке
   const finalBreadcrumbPaths = breadcrumbPaths.slice(0, -1);
 
+  // Генерируем структурированные данные для SEO
+  const breadcrumbSchema = generateBreadcrumbSchema(
+    breadcrumbPaths.map(path => ({ title: path.title, url: path.url })),
+    siteConfig.url.current
+  );
+
+  const itemListSchema = generateItemListSchema(
+    recipesWithImages,
+    pageTitle || "Рецепты кальянов",
+    siteConfig.url.current
+  );
+
   return (
-      <ReceptyPage
-          totalPages={totalPages}
-          fallbackTriggered={fallbackTriggered}
-          recipes={recipesWithImages}
-          currentPath={currentPath}
-          pageTitle={pageTitle}
-          finalBreadcrumbPaths={finalBreadcrumbPaths}
-      />
+      <>
+        <StructuredData data={[breadcrumbSchema, itemListSchema]} />
+        <ReceptyPage
+            totalPages={totalPages}
+            fallbackTriggered={fallbackTriggered}
+            recipes={recipesWithImages}
+            currentPath={currentPath}
+            pageTitle={pageTitle}
+            finalBreadcrumbPaths={finalBreadcrumbPaths}
+        />
+      </>
   );
 }

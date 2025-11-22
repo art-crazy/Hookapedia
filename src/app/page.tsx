@@ -5,6 +5,9 @@ import {COLLECTION_TYPES, CollectionType} from "@/types/collections";
 import { CollectionHome } from '@/components/Collection';
 import {Recipe} from "@/data/recipes";
 import {recipes} from "@/data";
+import {StructuredData} from "@/components/StructuredData";
+import {generateWebSiteSchema, generateOrganizationSchema} from "@/utils/structuredData";
+import {siteConfig} from "@/config/site";
 
 interface CollectionCategories {
 	id: number;
@@ -112,14 +115,20 @@ export default function Home() {
 		}
 	];
 
+	const websiteSchema = generateWebSiteSchema(siteConfig.url.current, siteConfig.metadata.name);
+	const organizationSchema = generateOrganizationSchema(siteConfig.url.current, siteConfig.metadata.name);
+
 	return (
-		<ContainerHome>
-			{collections.map((collection, index) =>
-				<CollectionHome
-					key={index}
-					collection={collection}
-				/>
-			)}
-		</ContainerHome>
+		<>
+			<StructuredData data={[websiteSchema, organizationSchema]} />
+			<ContainerHome>
+				{collections.map((collection, index) =>
+					<CollectionHome
+						key={index}
+						collection={collection}
+					/>
+				)}
+			</ContainerHome>
+		</>
 	);
 }

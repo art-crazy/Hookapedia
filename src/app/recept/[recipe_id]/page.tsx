@@ -3,6 +3,9 @@ import {Recipe} from "@/types/recipe";
 import {getRecipeById} from "@/services/api";
 import {ReceptPage} from "@/page/ReceptPage/ReceptPage";
 import {withRecipePlaceholders} from "@/utils/recipePlaceholders";
+import {StructuredData} from "@/components/StructuredData";
+import {generateRecipeSchema} from "@/utils/structuredData";
+import {siteConfig} from "@/config/site";
 
 interface PageProps {
   params: Promise<{
@@ -24,8 +27,15 @@ export default async function Page({ params }: PageProps) {
     if (!recipe) {
       notFound();
     }
+
+    const recipeUrl = `${siteConfig.url.current}/recept/${recipe_id}`;
+    const recipeSchema = generateRecipeSchema(preparedRecipe, recipeUrl);
+
     return (
-        <ReceptPage recipe={preparedRecipe} />
+        <>
+          <StructuredData data={recipeSchema} />
+          <ReceptPage recipe={preparedRecipe} />
+        </>
     )
   } catch (error) {
     console.error('Error loading recipe:', error);
