@@ -1,5 +1,7 @@
 'use client';
 
+import { YM_ENABLED, YM_ID } from '@/config/ym.constants';
+
 /**
  * Хук для работы с Яндекс Метрикой
  * Позволяет отправлять события в метрику из любого компонента
@@ -11,8 +13,10 @@ export const useYandexMetrika = () => {
    * @param params - дополнительные параметры
    */
   const reachGoal = (targetName: string, params?: Record<string, any>) => {
+    if (!YM_ENABLED) return;
+
     if (typeof window !== 'undefined' && window.ym) {
-      window.ym(103415240, 'reachGoal', targetName, params);
+      window.ym(YM_ID, 'reachGoal', targetName, params);
     } else {
       console.warn('Yandex Metrika not initialized');
     }
@@ -24,8 +28,10 @@ export const useYandexMetrika = () => {
    * @param params - дополнительные параметры
    */
   const sendEvent = (eventName: string, params?: Record<string, any>) => {
+    if (!YM_ENABLED) return;
+
     if (typeof window !== 'undefined' && window.ym) {
-      window.ym(103415240, 'params', { [eventName]: params || true });
+      window.ym(YM_ID, 'params', { [eventName]: params || true });
     } else {
       console.warn('Yandex Metrika not initialized');
     }
