@@ -36,10 +36,10 @@ export const getRecipes = async (filters: RecipeFilters = {}): Promise<RecipeRes
     if (filters.page) params.append('page', filters.page.toString());
     if (filters.limit) params.append('limit', filters.limit.toString());
     if (filters.search) params.append('search', filters.search);
-    if (filters.dish_categories) params.append('dish_categories', filters.dish_categories);
-    if (filters.subcategories) params.append('subcategories', filters.subcategories);
-    if (filters.cuisine_categories) params.append('cuisine_categories', filters.cuisine_categories);
-    if (filters.diet_categories) params.append('diet_categories', filters.diet_categories);
+    if (filters.flavor_category) params.append('flavor_category', filters.flavor_category);
+    if (filters.mint_category) params.append('mint_category', filters.mint_category);
+    if (filters.cooling_category) params.append('cooling_category', filters.cooling_category);
+    if (filters.strength_category) params.append('strength_category', filters.strength_category);
 
     const response = await fetchWithRetry(`${API_URL}/recipes?${params.toString()}`);
     return response.json();

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import styles from './FilterGroup.module.scss';
 
-type FilterType = 'diet' | 'cuisine' | 'category' | 'subcategory';
+type FilterType = 'strength' | 'flavor' | 'cooling' | 'mint';
 
 interface FilterGroupProps {
     title: string;

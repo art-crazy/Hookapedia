@@ -18,7 +18,7 @@ import {useState} from "react";
 import {useRouter} from "next/navigation";
 
 
-type FilterType = 'diet' | 'cuisine' | 'category' | 'subcategory';
+type FilterType = 'strength' | 'flavor' | 'cooling' | 'mint';
 
 type BreadcrumbPath = {
     title: string;
@@ -31,10 +31,10 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
     fallbackTriggered: boolean;
     totalPages: number,
     currentPath: {
-        diet?: string;
-        cuisine?: string;
-        category?: string;
-        subcategory?: string;
+        strength?: string;
+        flavor?: string;
+        cooling?: string;
+        mint?: string;
     },
     pageTitle: string;
     finalBreadcrumbPaths?: BreadcrumbPath[];
@@ -61,10 +61,10 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
     const handleApplyFilters = () => {
         // Формируем URL
         const pathParts = [];
-        if (selectedFilters.diet) pathParts.push(selectedFilters.diet);
-        if (selectedFilters.cuisine) pathParts.push(selectedFilters.cuisine);
-        if (selectedFilters.category) pathParts.push(selectedFilters.category);
-        if (selectedFilters.subcategory) pathParts.push(selectedFilters.subcategory);
+        if (selectedFilters.strength) pathParts.push(selectedFilters.strength);
+        if (selectedFilters.flavor) pathParts.push(selectedFilters.flavor);
+        if (selectedFilters.cooling) pathParts.push(selectedFilters.cooling);
+        if (selectedFilters.mint) pathParts.push(selectedFilters.mint);
 
         const url = pathParts.length > 0 ? `/recepty/${pathParts.join('/')}` : '/recepty';
         router.push(url);
@@ -73,7 +73,7 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
     const filterGroups = [
         {
             title: 'Крепость',
-            type: 'diet' as const,
+            type: 'strength' as const,
             options: Object.entries(strengthCategories).map(([id, data]) => ({
                 id,
                 name: data.title,
@@ -83,7 +83,7 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
         },
         {
             title: 'Категории вкуса',
-            type: 'cuisine' as const,
+            type: 'flavor' as const,
             options: Object.entries(flavorCategoryCategories).map(([id, data]) => ({
                 id,
                 name: data.title,
@@ -93,7 +93,7 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
         },
         {
             title: 'Наличие холодка',
-            type: 'category' as const,
+            type: 'cooling' as const,
             options: Object.entries(coolingCategories).map(([id, data]) => ({
                 id,
                 name: data.title,
@@ -103,7 +103,7 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
         },
         {
             title: 'Наличие мяты',
-            type: 'subcategory' as const,
+            type: 'mint' as const,
             options: Object.entries(mintCategories).map(([id, data]) => ({
                 id,
                 name: data.title,

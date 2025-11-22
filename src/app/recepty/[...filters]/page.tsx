@@ -21,10 +21,10 @@ type CategoryMap = {
 };
 
 const categoryMaps: Record<string, CategoryMap> = {
-  diet: strengthCategories,
-  cuisine: flavorCategoryCategories,
-  category: coolingCategories,
-  subcategory: mintCategories
+  strength: strengthCategories,
+  flavor: flavorCategoryCategories,
+  cooling: coolingCategories,
+  mint: mintCategories
 };
 
 const getCategoryTitle = (filter: string): string | undefined => {
@@ -55,19 +55,19 @@ export default async function FilteredRecipesContent({ params, searchParams }: P
 
   // Определяем типы всех фильтров
   const currentPath = {
-    diet: filters.find(filter => filter in strengthCategories),
-    cuisine: filters.find(filter => filter in flavorCategoryCategories),
-    category: filters.find(filter => filter in coolingCategories),
-    subcategory: filters.find(filter => filter in mintCategories),
+    strength: filters.find(filter => filter in strengthCategories),
+    flavor: filters.find(filter => filter in flavorCategoryCategories),
+    cooling: filters.find(filter => filter in coolingCategories),
+    mint: filters.find(filter => filter in mintCategories),
     search: resolvedSearchParams.search
   };
 
   // Формируем параметры для API
   const apiParams = {
-    diet_categories: currentPath.diet,
-    cuisine_categories: currentPath.cuisine,
-    dish_categories: currentPath.category,
-    subcategories: currentPath.subcategory,
+    strength_category: currentPath.strength,
+    flavor_category: currentPath.flavor,
+    cooling_category: currentPath.cooling,
+    mint_category: currentPath.mint,
     search: currentPath.search,
     page: currentPage,
     limit: LIMIT

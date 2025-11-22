@@ -56,8 +56,8 @@ export interface RecipeFilters {
   page?: number;
   limit?: number;
   search?: string;
-  dish_categories?: string;
-  subcategories?: string;
-  cuisine_categories?: string;
-  diet_categories?: string;
+  flavor_category?: string;
+  mint_category?: string;
+  cooling_category?: string;
+  strength_category?: string;
 }
