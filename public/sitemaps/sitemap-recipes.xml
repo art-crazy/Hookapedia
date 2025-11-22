@@ -11,61 +11,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kalyany-mix.ru/recept/vanilla-ice-cream-674</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kalyany-mix.ru/recept/caprese-salad-672</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kalyany-mix.ru/recept/orange-ice-mix-367</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kalyany-mix.ru/recept/grape-mint-mix-366</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kalyany-mix.ru/recept/watermelon-basil-8</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kalyany-mix.ru/recept/guacamole-683</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kalyany-mix.ru/recept/passion-fruit-ice-mix-369</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kalyany-mix.ru/recept/grape-mint-ice-6</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kalyany-mix.ru/recept/mint-lemonade-680</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kalyany-mix.ru/recept/chocolate-cherry-7</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kalyany-mix.ru/recept/berry-smoothie-681</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://kalyany-mix.ru/recept/tropical-paradise-2</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -81,12 +26,12 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kalyany-mix.ru/recept/caesar-salad-673</loc>
+    <loc>https://kalyany-mix.ru/recept/orange-ice-mix-367</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kalyany-mix.ru/recept/zucchini-fritters-679</loc>
+    <loc>https://kalyany-mix.ru/recept/grape-mint-mix-366</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -96,12 +41,12 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kalyany-mix.ru/recept/double-apple-mint-classic-370</loc>
+    <loc>https://kalyany-mix.ru/recept/watermelon-basil-8</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kalyany-mix.ru/recept/strawberry-sorbet-675</loc>
+    <loc>https://kalyany-mix.ru/recept/double-apple-mint-classic-370</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -111,12 +56,12 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kalyany-mix.ru/recept/berry-cheesecake-676</loc>
+    <loc>https://kalyany-mix.ru/recept/passion-fruit-ice-mix-369</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kalyany-mix.ru/recept/grilled-corn-678</loc>
+    <loc>https://kalyany-mix.ru/recept/grape-mint-ice-6</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -136,17 +81,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kalyany-mix.ru/recept/berry-pavlova-677</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://kalyany-mix.ru/recept/refreshing-lemon-mint-1</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kalyany-mix.ru/recept/hummus-682</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -167,6 +102,11 @@
   </url>
   <url>
     <loc>https://kalyany-mix.ru/recept/peach-passion-fruit-9</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kalyany-mix.ru/recept/chocolate-cherry-7</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

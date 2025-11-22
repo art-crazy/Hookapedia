@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import * as ts from 'typescript';
 
 const normalizeBaseUrl = (url) => url.replace(/\/+$/, '');
 
@@ -10,10 +11,47 @@ const apiUrl = process.env.API_URL ?? 'http://109.205.56.225:3001/api';
 const sitemapDir = join(process.cwd(), 'public', 'sitemaps');
 const MAX_URLS_PER_FILE = 15000;
 
-const strengthCategories = ['legkaya', 'srednyaya', 'krepkaya'];
-const flavorCategories = ['frukty', 'yagody', 'tsitrusovye', 'deserty', 'pryanosti-travy', 'ekzotika'];
-const coolingCategories = ['net', 'legkiy-kholod', 'silnyy-kholod'];
-const mintCategories = ['est', 'net'];
+/**
+ * Быстрое чтение TS-модулей с категориями без отдельной сборки.
+ * Транспилируем в JS на лету и импортируем через data: URL.
+ */
+async function importTsModule(relativePath) {
+  const fullPath = join(process.cwd(), relativePath);
+  const source = readFileSync(fullPath, 'utf8');
+
+  const { outputText } = ts.transpileModule(source, {
+    compilerOptions: {
+      module: ts.ModuleKind.ESNext,
+      target: ts.ScriptTarget.ES2020,
+      importsNotUsedAsValues: ts.ImportsNotUsedAsValues.Remove,
+    },
+    fileName: fullPath,
+  });
+
+  const dataUrl = `data:text/javascript;base64,${Buffer.from(outputText, 'utf8').toString('base64')}`;
+  return import(dataUrl);
+}
+
+async function loadFilterCategories() {
+  const [
+    { strengthCategories },
+    { flavorCategoryCategories },
+    { coolingCategories },
+    { mintCategories },
+  ] = await Promise.all([
+    importTsModule('src/data/categories/strengthCategories.ts'),
+    importTsModule('src/data/categories/flavorCategoryCategories.ts'),
+    importTsModule('src/data/categories/coolingCategories.ts'),
+    importTsModule('src/data/categories/mintCategories.ts'),
+  ]);
+
+  return {
+    strength: Object.keys(strengthCategories),
+    flavor: Object.keys(flavorCategoryCategories),
+    cooling: Object.keys(coolingCategories),
+    mint: Object.keys(mintCategories),
+  };
+}
 
 try {
   mkdirSync(sitemapDir, { recursive: true });
@@ -68,19 +106,21 @@ function generateRecipeUrls(recipes) {
   });
 }
 
-function generateFilterUrls() {
+async function generateFilterUrls() {
   const urls = new Set([`${baseUrl}/recepty`]);
 
-  const strengths = [undefined, ...strengthCategories];
-  const flavors = [undefined, ...flavorCategories];
-  const coolings = [undefined, ...coolingCategories];
-  const mints = [undefined, ...mintCategories];
+  const { strength, flavor, cooling, mint } = await loadFilterCategories();
 
-  for (const strength of strengths) {
-    for (const flavor of flavors) {
-      for (const cooling of coolings) {
-        for (const mint of mints) {
-          const parts = [strength, flavor, cooling, mint].filter(Boolean);
+  const strengths = [undefined, ...strength];
+  const flavors = [undefined, ...flavor];
+  const coolings = [undefined, ...cooling];
+  const mints = [undefined, ...mint];
+
+  for (const strengthCategory of strengths) {
+    for (const flavorCategory of flavors) {
+      for (const coolingCategory of coolings) {
+        for (const mintCategory of mints) {
+          const parts = [strengthCategory, flavorCategory, coolingCategory, mintCategory].filter(Boolean);
           if (!parts.length) continue;
           urls.add(`${baseUrl}/recepty/${parts.join('/')}`);
         }
@@ -151,7 +191,8 @@ async function generateAllSitemaps() {
     const recipeUrls = generateRecipeUrls(recipes);
     allSitemaps.push(...generateSitemapFile(recipeUrls, 'sitemap-recipes.xml', '0.9'));
 
-    allSitemaps.push(...generateSitemapFile(generateFilterUrls(), 'sitemap-categories.xml', '0.7'));
+    const filterUrls = await generateFilterUrls();
+    allSitemaps.push(...generateSitemapFile(filterUrls, 'sitemap-categories.xml', '0.7'));
 
     generateSitemapIndex(allSitemaps);
 
