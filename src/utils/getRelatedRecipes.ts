@@ -1,8 +1,8 @@
-import { Recipe } from '@/data/recipes';
+import { Recipe } from '@/types/recipe';
 import { recipes } from '@/data';
 
 export function getRelatedRecipes(currentRecipe: Recipe, limit: number = 3): Recipe[] {
-  const allRecipes = Object.values(recipes);
+  const allRecipes = Object.values(recipes) as Recipe[];
 
   // Фильтруем рецепты, исключая текущий
   const otherRecipes = allRecipes.filter(recipe => recipe.id !== currentRecipe.id);
