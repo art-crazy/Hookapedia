@@ -1,0 +1,62 @@
+.servingsBlock {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  padding: 12px 20px;
+  width: fit-content;
+  border: 1px solid var(--border-primary);
+  justify-content: center;
+
+  button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 12px;
+    color: var(--color-text-primary);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-text-muted);
+    }
+  }
+
+  span {
+    font-size: 15px;
+    color: var(--color-text-tertiary);
+  }
+}
+
+.ingredientsTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.ingredientsList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.ingredientsList li {
+  margin-bottom: 12px;
+  color: var(--color-text-tertiary);
+  position: relative;
+  padding-left: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 18px;
+  line-height: 1.5;
+
+  &::before {
+    content: "•";
+    position: absolute;
+    left: -4px;
+    color: var(--color-text-primary);
+    font-size: 1.2em;
+  }
+}

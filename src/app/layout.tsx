@@ -1,8 +1,8 @@
 import {Geist, Geist_Mono} from "next/font/google";
 import "@/styles/theme.config.scss";
 import "@/styles/globals.scss";
-import {LayoutWrapperUI} from "ui-hookapedia";
-import Header from "@/components/Header/Header";
+import {LayoutWrapperUI} from "@/components/hoc";
+import Header from "@/components/Header";
 import React from "react";
 import YandexMetrika from "@/components/YandexMetrika/YandexMetrika";
 import {siteConfig} from "@/config/site";

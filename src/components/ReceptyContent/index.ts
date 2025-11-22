@@ -1,0 +1,1 @@
+export { ReceptyContent } from './ReceptyContent';

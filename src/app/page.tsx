@@ -1,6 +1,6 @@
 import { metadata } from './metadata';
 export { metadata };
-import {ContainerHome} from "ui-hookapedia";
+import {ContainerHome} from "@/components/ContainerHome";
 import {COLLECTION_TYPES, CollectionType} from "@/types/collections";
 import { CollectionHome } from '@/components/Collection';
 import {Recipe} from "@/data/recipes";

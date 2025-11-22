@@ -1,14 +1,10 @@
 'use client'
 
-import {
-    Container,
-    Filters,
-    ReceptyContent, RecipeList,
-    RecipeListAll,
-    RecipeListSection
-} from "ui-hookapedia";
+import {Container} from "@/components/Container";
+import {Filters, FilterGroup} from "@/components/Filters";
+import {ReceptyContent} from "@/components/ReceptyContent";
+import {RecipeList, RecipeListAll, RecipeListSection} from "@/components/RecipeList";
 import {Breadcrumbs} from "@/components/Breadcrumbs";
-import {FilterGroup} from "@/components/Filters";
 import {ButtonSearch} from "@/components/ButtonSearch";
 import {Pagination} from "@/components/Pagination";
 import Image from "next/image";

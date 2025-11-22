@@ -1,6 +1,6 @@
 'use client'
 
-import {Mix} from "ui-hookapedia";
+import {Mix} from "@/page/mix";
 import {Recipe} from "@/types/recipe";
 
 export const ReceptPage = ({recipe}: { recipe: Recipe }) => {

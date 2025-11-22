@@ -1,5 +1,5 @@
 'use client'
-import {HeaderUI} from "ui-hookapedia";
+import {HeaderUI} from "./HeaderUI";
 import {useRouter, usePathname} from "next/navigation";
 import {useState} from "react";
 import {siteConfig} from "@/config/site";
