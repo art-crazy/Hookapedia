@@ -7,6 +7,10 @@ interface StructuredDataProps {
 /**
  * Компонент для вставки структурированных данных JSON-LD
  * Используется для улучшения SEO и отображения расширенных сниппетов в Яндекс/Google
+ *
+ * @example
+ * <StructuredData data={recipeSchema} />
+ * <StructuredData data={[breadcrumbSchema, itemListSchema]} />
  */
 export function StructuredData({ data }: StructuredDataProps) {
   const jsonLd = Array.isArray(data) ? data : [data];
@@ -15,11 +19,12 @@ export function StructuredData({ data }: StructuredDataProps) {
     <>
       {jsonLd.map((item, index) => (
         <script
-          key={index}
+          key={`jsonld-${index}`}
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(item, null, 0),
+            __html: JSON.stringify(item),
           }}
+          suppressHydrationWarning
         />
       ))}
     </>
