@@ -7,10 +7,10 @@ import {ReceptyPage} from "@/page/ReceptyPage";
 import {withRecipePlaceholders} from "@/utils/recipePlaceholders";
 
 type SearchParams = Promise<{
-    diet?: string;
-    cuisine?: string;
-    category?: string;
-    subcategory?: string;
+    strength?: string;
+    flavor?: string;
+    cooling?: string;
+    mint?: string;
     search?: string;
     page?: string;
 }>;
@@ -21,15 +21,19 @@ export default async function RecipesContent({searchParams,}: { searchParams: Se
     const currentPage = Number(resolvedParams.page) || 1;
 
     const currentPath = {
-        diet: resolvedParams.diet,
-        cuisine: resolvedParams.cuisine,
-        category: resolvedParams.category,
-        subcategory: resolvedParams.subcategory,
+        strength: resolvedParams.strength,
+        flavor: resolvedParams.flavor,
+        cooling: resolvedParams.cooling,
+        mint: resolvedParams.mint,
         search: resolvedParams.search
     };
 
     const apiParams = {
-        ...currentPath,
+        strength_category: currentPath.strength,
+        flavor_category: currentPath.flavor,
+        cooling_category: currentPath.cooling,
+        mint_category: currentPath.mint,
+        search: currentPath.search,
         page: currentPage,
         limit: LIMIT,
     };
