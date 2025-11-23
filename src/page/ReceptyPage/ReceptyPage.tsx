@@ -35,6 +35,7 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
         flavor?: string;
         cooling?: string;
         mint?: string;
+        search?: string;
     },
     pageTitle: string;
     finalBreadcrumbPaths?: BreadcrumbPath[];
@@ -164,7 +165,13 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
                         currentPage={currentPage}
                         totalPages={totalPages}
                         baseUrl={`/recepty/`}
-                        searchParams={currentPage > 1 ? { page: currentPage.toString() } : {}}
+                        searchParams={{
+                            ...(currentPath.strength && { strength: currentPath.strength }),
+                            ...(currentPath.flavor && { flavor: currentPath.flavor }),
+                            ...(currentPath.cooling && { cooling: currentPath.cooling }),
+                            ...(currentPath.mint && { mint: currentPath.mint }),
+                            ...(currentPath.search && { search: currentPath.search }),
+                        }}
                         Link={Link}
                     />
                 )}
