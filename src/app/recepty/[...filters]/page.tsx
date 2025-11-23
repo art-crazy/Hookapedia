@@ -117,6 +117,7 @@ export default async function FilteredRecipesContent({ params, searchParams }: P
             currentPath={currentPath}
             pageTitle={pageTitle}
             finalBreadcrumbPaths={finalBreadcrumbPaths}
+            currentPage={currentPage}
         />
       </>
   );

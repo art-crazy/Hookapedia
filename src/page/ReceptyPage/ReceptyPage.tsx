@@ -26,7 +26,7 @@ type BreadcrumbPath = {
     key: string;
 };
 
-export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath, pageTitle, finalBreadcrumbPaths}: {
+export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath, pageTitle, finalBreadcrumbPaths, currentPage = 1}: {
     recipes: Recipe[],
     fallbackTriggered: boolean;
     totalPages: number,
@@ -38,6 +38,7 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
     },
     pageTitle: string;
     finalBreadcrumbPaths?: BreadcrumbPath[];
+    currentPage?: number;
 }) => {
 
     const router = useRouter();
@@ -160,10 +161,10 @@ export const ReceptyPage = ({totalPages, fallbackTriggered, recipes, currentPath
 
                 {totalPages > 1 && (
                     <Pagination
-                        currentPage={1}
+                        currentPage={currentPage}
                         totalPages={totalPages}
                         baseUrl={`/recepty/`}
-                        searchParams={{}}
+                        searchParams={currentPage > 1 ? { page: currentPage.toString() } : {}}
                         Link={Link}
                     />
                 )}

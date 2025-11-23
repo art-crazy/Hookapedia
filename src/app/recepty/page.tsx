@@ -50,6 +50,7 @@ export default async function RecipesContent({searchParams,}: { searchParams: Se
             recipes={recipesWithImages}
             currentPath={currentPath}
             pageTitle={pageTitle}
+            currentPage={currentPage}
         />
     );
 }
