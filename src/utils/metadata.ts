@@ -4,23 +4,25 @@ import { siteConfig } from '@/config/site';
 export const DEFAULT_OG_IMAGE = '/placeholder-image.png';
 
 export const defaultRobots: Metadata['robots'] = {
-	index: false,
-	follow: false,
+	index: true,
+	follow: true,
 	googleBot: {
-		index: false,
-		follow: false,
+		index: true,
+		follow: true,
 		'max-video-preview': -1,
 		'max-image-preview': 'large',
 		'max-snippet': -1,
 	},
 };
 
+type OpenGraphType = 'website' | 'article' | 'book' | 'profile' | 'music.song' | 'music.album' | 'music.playlist' | 'music.radio_station' | 'video.movie' | 'video.episode' | 'video.tv_show' | 'video.other';
+
 type BuildMetadataProps = {
 	title: string;
 	description: string;
 	url?: string;
 	image?: string;
-	type?: Metadata['openGraph'] extends object ? Metadata['openGraph']['type'] : string;
+	type?: OpenGraphType;
 	keywords?: Metadata['keywords'];
 	robots?: Metadata['robots'];
 	ogTitle?: string;

@@ -1,21 +1,24 @@
-import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
+import { buildMetadata } from '@/utils/metadata';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
     title: `Глоссарий кальянных терминов | ${siteConfig.metadata.name}`,
     description: 'Полный глоссарий кальянных терминов: крепость табака, холодок, форточка, бленд, моновкус, забивка и другие термины для начинающих и опытных кальянщиков.',
-    keywords: ['глоссарий кальянных терминов', 'термины кальяна', 'кальянный сленг', 'что такое крепость табака', 'что такое холодок', 'форточка кальян', 'бленд табака', 'моновкус', 'забивка кальяна', 'кальянная терминология'],
-    openGraph: {
-        title: `Глоссарий кальянных терминов | ${siteConfig.metadata.name}`,
-        description: 'Полный глоссарий кальянных терминов и определений для начинающих и опытных кальянщиков',
-        type: "website",
-        locale: "ru_RU",
-        siteName: siteConfig.metadata.name,
-        url: `${siteConfig.url.production}/glossarij`,
-    },
-    alternates: {
-        canonical: `${siteConfig.url.production}/glossarij`,
-    },
+    url: `${siteConfig.url.current}/glossarij`,
+    keywords: [
+        'глоссарий кальянных терминов',
+        'термины кальяна',
+        'кальянный сленг',
+        'что такое крепость табака',
+        'что такое холодок',
+        'форточка кальян',
+        'бленд табака',
+        'моновкус',
+        'забивка кальяна',
+        'кальянная терминология'
+    ],
+    ogTitle: `Глоссарий кальянных терминов | ${siteConfig.metadata.name}`,
+    ogDescription: 'Полный глоссарий кальянных терминов и определений для начинающих и опытных кальянщиков',
     robots: {
         index: true,
         follow: true,
@@ -27,4 +30,4 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
-};
+});
