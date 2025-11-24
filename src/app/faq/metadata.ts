@@ -1,9 +1,10 @@
-import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
+import { buildMetadata } from '@/utils/metadata';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
     title: `Вопросы и ответы о кальянах - FAQ | ${siteConfig.metadata.name}`,
     description: 'Ответы на частые вопросы о кальянах: как выбрать табак, забивка, уход за кальяном, выбор чаши, угля и аксессуаров. Всё о кальянной культуре.',
+    url: `${siteConfig.url.current}/faq`,
     keywords: [
         'вопросы о кальянах',
         'FAQ кальян',
@@ -13,17 +14,8 @@ export const metadata: Metadata = {
         'вопросы про кальян',
         'кальянные советы'
     ],
-    openGraph: {
-        title: `Вопросы и ответы о кальянах | ${siteConfig.metadata.name}`,
-        description: 'Ответы на частые вопросы о кальянах, табаке и забивке',
-        type: 'website',
-        locale: 'ru_RU',
-        siteName: siteConfig.metadata.name,
-        url: `${siteConfig.url.current}/faq`
-    },
-    alternates: {
-        canonical: `${siteConfig.url.current}/faq`
-    },
+    ogTitle: `Вопросы и ответы о кальянах | ${siteConfig.metadata.name}`,
+    ogDescription: 'Ответы на частые вопросы о кальянах, табаке и забивке',
     robots: {
         index: true,
         follow: true,
@@ -35,4 +27,4 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     }
-};
+});

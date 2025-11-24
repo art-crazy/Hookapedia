@@ -1,9 +1,10 @@
-import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
+import { buildMetadata } from '@/utils/metadata';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
     title: siteConfig.metadata.title.recipes,
     description: siteConfig.metadata.description.recipes,
+    url: `${siteConfig.url.current}${siteConfig.paths.recipes}`,
     keywords: [
         'рецепты блюд',
         'поиск рецептов',
@@ -22,26 +23,4 @@ export const metadata: Metadata = {
         'идеи для обеда',
         'идеи для завтрака'
     ],
-    openGraph: {
-        title: siteConfig.metadata.title.og.recipes,
-        description: siteConfig.metadata.description.og.recipes,
-        type: 'website',
-        locale: 'ru_RU',
-        siteName: siteConfig.metadata.name,
-        url: `${siteConfig.url.current}${siteConfig.paths.recipes}`
-    },
-    alternates: {
-        canonical: `${siteConfig.url.current}${siteConfig.paths.recipes}`
-    },
-    robots: {
-        index: false,
-        follow: false,
-        googleBot: {
-            index: false,
-            follow: false,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-        },
-    }
-};
+});

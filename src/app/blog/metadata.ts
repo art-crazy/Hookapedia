@@ -1,9 +1,10 @@
-import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
+import { buildMetadata } from '@/utils/metadata';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
     title: `Блог о кальянах: статьи, советы, гайды | ${siteConfig.metadata.name}`,
     description: 'Полезные статьи о кальянах: как выбрать табак, секреты забивки, обзоры новинок, советы по уходу за кальяном. Всё что нужно знать о кальянной культуре.',
+    url: `${siteConfig.url.current}/blog`,
     keywords: [
         'блог о кальянах',
         'статьи про кальян',
@@ -14,17 +15,8 @@ export const metadata: Metadata = {
         'обзоры табака',
         'гайды по кальяну'
     ],
-    openGraph: {
-        title: `Блог о кальянах | ${siteConfig.metadata.name}`,
-        description: 'Полезные статьи, советы и гайды о кальянах',
-        type: 'website',
-        locale: 'ru_RU',
-        siteName: siteConfig.metadata.name,
-        url: `${siteConfig.url.current}/blog`
-    },
-    alternates: {
-        canonical: `${siteConfig.url.current}/blog`
-    },
+    ogTitle: `Блог о кальянах | ${siteConfig.metadata.name}`,
+    ogDescription: 'Полезные статьи, советы и гайды о кальянах',
     robots: {
         index: true,
         follow: true,
@@ -36,4 +28,4 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     }
-};
+});

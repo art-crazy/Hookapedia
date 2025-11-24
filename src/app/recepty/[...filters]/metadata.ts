@@ -5,6 +5,7 @@ import {strengthCategories} from "@/data/categories/strengthCategories";
 import {flavorCategoryCategories} from "@/data/categories/flavorCategoryCategories";
 import {coolingCategories} from "@/data/categories/coolingCategories";
 import {mintCategories} from "@/data/categories/mintCategories";
+import { buildMetadata } from '@/utils/metadata';
 
 type Props = {
   params: Promise<{ filters: string[] }>
@@ -122,9 +123,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const metadata = generateMetadataForFilters(filters);
   const canonicalUrl = `${siteConfig.url.current}/recepty/${filters.join('/')}`;
 
-  return {
+  return buildMetadata({
     title: metadata.title,
     description: metadata.description,
+    url: canonicalUrl,
     keywords: [
       'рецепты кальянов',
       'миксы табака',
@@ -136,27 +138,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'кальянные миксы',
       'рецепты забивки'
     ],
-    openGraph: {
-      title: metadata.ogTitle,
-      description: metadata.ogDescription,
-      type: 'website',
-      locale: 'ru_RU',
-      siteName: siteConfig.metadata.name,
-      url: canonicalUrl
-    },
-    alternates: {
-      canonical: canonicalUrl
-    },
-    robots: {
-      index: false,
-      follow: false,
-      googleBot: {
-        index: false,
-        follow: false,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    }
-  };
+    ogTitle: metadata.ogTitle,
+    ogDescription: metadata.ogDescription,
+  });
 }
