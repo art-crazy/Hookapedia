@@ -1,3 +1,6 @@
+import { generateMetadata } from './metadata';
+export { generateMetadata };
+
 import {ReceptyPage} from "@/page/ReceptyPage";
 import {LIMIT} from "@/config/limit.constants";
 import {getRecipes} from "@/services/api";
@@ -50,6 +53,9 @@ type Props = {
 export default async function FilteredRecipesContent({ params, searchParams }: Props) {
   const resolvedParams = await params;
   const resolvedSearchParams = await searchParams;
+
+  console.log('Rendering page for filters:', resolvedParams.filters);
+
   const currentPage = Number(resolvedSearchParams.page) || 1;
   const filters = resolvedParams.filters;
 
