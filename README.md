@@ -1,5 +1,11 @@
 # 💨 Hookapedia — Энциклопедия Кальянных Миксов
 
+> **⚠️ Внимание:** Это оригинальная монолитная версия проекта. Актуальные версии с улучшенной архитектурой:
+> - 🎨 **Frontend:** [Hookapedia-frontend](https://github.com/art-crazy/Hookapedia-frontend) — клиентская часть на Next.js
+> - ⚙️ **Backend:** [Hookapedia-backend](https://github.com/art-crazy/Hookapedia-backend) — серверная часть на NestJS
+>
+> 🌐 **Live Demo:** https://kalyany-mix.ru
+
 **Hookapedia** — это современная full-stack платформа для создания, поиска и каталогизации кальянных рецептов. Проект демонстрирует профессиональный подход к разработке веб-приложений с использованием TypeScript, Next.js и NestJS.
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
