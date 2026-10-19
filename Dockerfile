@@ -1,11 +1,11 @@
-FROM node:18-alpine
+FROM node:22-alpine
 WORKDIR /app
 
 # Копируем package.json и package-lock.json
 COPY package.json package-lock.json ./
 
 # Устанавливаем зависимости
-RUN npm install
+RUN npm ci
 
 # Копируем весь исходный код
 COPY . .
